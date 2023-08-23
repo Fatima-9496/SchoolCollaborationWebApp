@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SchoolApp.Data;
 
@@ -11,9 +12,10 @@ using SchoolApp.Data;
 namespace SchoolApp.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230823062820_enroll edit no foreign")]
+    partial class enrolleditnoforeign
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -353,20 +355,20 @@ namespace SchoolApp.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("EnrollmentId"), 1L, 1);
 
-                    b.Property<int?>("CourseId")
+                    b.Property<string>("AppUserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("CourseId")
                         .HasColumnType("int");
 
-                    b.Property<string>("EUserName")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("StudentId")
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("EnrollmentId");
 
-                    b.HasIndex("CourseId");
+                    b.HasIndex("AppUserId");
 
-                    b.HasIndex("StudentId");
+                    b.HasIndex("CourseId");
 
                     b.ToTable("Enrollments");
                 });
@@ -498,13 +500,15 @@ namespace SchoolApp.Data.Migrations
 
             modelBuilder.Entity("SchoolApp.Models.Enrollment", b =>
                 {
-                    b.HasOne("SchoolApp.Models.Course", "Course")
-                        .WithMany("Enrollments")
-                        .HasForeignKey("CourseId");
-
                     b.HasOne("SchoolApp.Models.AppUser", "AppUser")
                         .WithMany()
-                        .HasForeignKey("StudentId");
+                        .HasForeignKey("AppUserId");
+
+                    b.HasOne("SchoolApp.Models.Course", "Course")
+                        .WithMany("Enrollments")
+                        .HasForeignKey("CourseId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("AppUser");
 

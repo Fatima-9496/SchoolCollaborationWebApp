@@ -4,7 +4,7 @@
 
 namespace SchoolApp.Data.Migrations
 {
-    public partial class projecteditdatatypefixa : Migration
+    public partial class usernullable : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

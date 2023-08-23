@@ -208,6 +208,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxDcmVhdGVQcm9qZWN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/fabay/source/repos/SchoolApp/SchoolApp/Views/Student/EnrollInACourse.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxFbnJvbGxJbkFDb3Vyc2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/fabay/source/repos/SchoolApp/SchoolApp/Views/Student/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/fabay/source/repos/SchoolApp/SchoolApp/Views/Teacher/CreateAnnouncement.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhY2hlclxDcmVhdGVBbm5vdW5jZW1lbnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

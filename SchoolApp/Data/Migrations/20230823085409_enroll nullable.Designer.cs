@@ -12,8 +12,8 @@ using SchoolApp.Data;
 namespace SchoolApp.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230819073201_project edit data type fix a")]
-    partial class projecteditdatatypefixa
+    [Migration("20230823085409_enroll nullable")]
+    partial class enrollnullable
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -88,6 +88,10 @@ namespace SchoolApp.Data.Migrations
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Discriminator")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Email")
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
@@ -139,6 +143,8 @@ namespace SchoolApp.Data.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
+
+                    b.HasDiscriminator<string>("Discriminator").HasValue("IdentityUser");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
@@ -349,15 +355,20 @@ namespace SchoolApp.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("EnrollmentId"), 1L, 1);
 
-                    b.Property<int>("CourseId")
+                    b.Property<int?>("CourseId")
                         .HasColumnType("int");
 
-                    b.Property<int>("StudentId")
-                        .HasColumnType("int");
+                    b.Property<string>("EUserName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("StudentId")
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("EnrollmentId");
 
                     b.HasIndex("CourseId");
+
+                    b.HasIndex("StudentId");
 
                     b.ToTable("Enrollments");
                 });
@@ -392,6 +403,26 @@ namespace SchoolApp.Data.Migrations
                     b.HasKey("ProjectId");
 
                     b.ToTable("Projects");
+                });
+
+            modelBuilder.Entity("SchoolApp.Models.AppUser", b =>
+                {
+                    b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
+
+                    b.Property<string>("AppUserConfirmPassword")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("AppUserEmail")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("AppUserPassword")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("AppUsername")
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)");
+
+                    b.HasDiscriminator().HasValue("AppUser");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -471,9 +502,13 @@ namespace SchoolApp.Data.Migrations
                 {
                     b.HasOne("SchoolApp.Models.Course", "Course")
                         .WithMany("Enrollments")
-                        .HasForeignKey("CourseId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("CourseId");
+
+                    b.HasOne("SchoolApp.Models.AppUser", "AppUser")
+                        .WithMany()
+                        .HasForeignKey("StudentId");
+
+                    b.Navigation("AppUser");
 
                     b.Navigation("Course");
                 });

@@ -13,7 +13,6 @@ namespace SchoolApp.Models
                 serviceProvider.GetRequiredService<
                     DbContextOptions<ApplicationDbContext>>()))
             {
-                // Look for any movies.
                 if (context.Courses.Any())
                 {
                     return;   // DB has been seeded

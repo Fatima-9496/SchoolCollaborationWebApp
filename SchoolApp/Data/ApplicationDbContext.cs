@@ -16,5 +16,7 @@ namespace SchoolApp.Data
         public DbSet<Enrollment> Enrollments { get; set; }
         public DbSet<Project> Projects { get; set; }
         public DbSet<Announcement> Announcements { get; set; }
+        public DbSet<AppUser> AppUsers { get; set; }
+
     }
 }

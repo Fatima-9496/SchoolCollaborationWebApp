@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SchoolApp.Models
 {
@@ -6,9 +7,14 @@ namespace SchoolApp.Models
     {
         [Key]
         public int EnrollmentId { get; set; }
-        public int CourseId { get; set; }
-
-        public int StudentId { get; set; }
+        public string? EUserName { get; set; }
+        [ForeignKey("Course")]
+        public int? CourseId { get; set; }
+        [ForeignKey("AppUser")]
+        public String? StudentId { get; set; }
         public Course? Course { get; set; }
+        public AppUser? AppUser { get; set; }
+        //public virtual AspnetUser Student { get; set; }
+
     }
 }

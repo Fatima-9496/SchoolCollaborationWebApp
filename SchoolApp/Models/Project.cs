@@ -15,7 +15,5 @@ namespace SchoolApp.Models
         public DateTime DateCompleted { get; set; }
         public string ImageMediaUrl { get; set; }
         public string VideoMediaUrl { get; set; }
-
-
     }
 }

@@ -1,0 +1,23 @@
+﻿@model SchoolApp.Models.Enrollment;
+@{
+    ViewData["Title"] = "Enrollment";
+}
+<form method="post" asp-action="EnrollInACourse">
+    <fieldset>
+        <legend>Enrollment Form</legend>
+        
+        <div class="form-group">
+            <label asp-for="EUserName" class="form-label mt-4">user name</label>
+            <input asp-for="EUserName" type="text" name="euserName" class="form-control" placeholder="Enter user name">
+            <span asp-validation-for="EUserName" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Course.CourseName)
+            @Html.DropDownListFor(model => model.Course.CourseName, new SelectList(ViewBag.CourseNames), "-- Select a course --", new { @class = "form-control" })
+        </div>
+        <br />
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </fieldset>
+</form>
+
+

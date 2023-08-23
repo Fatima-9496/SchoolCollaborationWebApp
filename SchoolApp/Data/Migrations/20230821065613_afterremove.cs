@@ -4,10 +4,15 @@
 
 namespace SchoolApp.Data.Migrations
 {
-    public partial class projecteditdatatypefix : Migration
+    public partial class afterremove : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.RenameColumn(
+                name: "MediaUrl",
+                table: "Projects",
+                newName: "VideoMediaUrl");
+
             migrationBuilder.AlterColumn<string>(
                 name: "ProjectTitle",
                 table: "Projects",
@@ -25,10 +30,26 @@ namespace SchoolApp.Data.Migrations
                 oldClrType: typeof(string),
                 oldType: "nvarchar(60)",
                 oldMaxLength: 60);
+
+            migrationBuilder.AddColumn<string>(
+                name: "ImageMediaUrl",
+                table: "Projects",
+                type: "nvarchar(max)",
+                nullable: false,
+                defaultValue: "");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropColumn(
+                name: "ImageMediaUrl",
+                table: "Projects");
+
+            migrationBuilder.RenameColumn(
+                name: "VideoMediaUrl",
+                table: "Projects",
+                newName: "MediaUrl");
+
             migrationBuilder.AlterColumn<string>(
                 name: "ProjectTitle",
                 table: "Projects",
