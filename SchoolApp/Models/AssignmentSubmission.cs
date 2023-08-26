@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SchoolApp.Models
 {
@@ -7,13 +8,17 @@ namespace SchoolApp.Models
         [Key]
         public int SubmissionId { get; set; }
         //public int AssignmentId { get; set; }
-        public int UserId { get; set; }
-        [RegularExpression(@"^\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}$", ErrorMessage = "Invalid date and time format (YYYY-MM-DD HH:mm:ss)")]
-        public DateTime SubmissionDate { get; set; }
-        public string SubmissionFileUrl { get; set; }
-        [Range(1, 100)]
-        public int score { get; set; }
-        public Assignment Assignment { get; set; }
+        [ForeignKey("AppUser")]
+        public string StudentId { get; set; }
+        [ForeignKey("Assignment")]
+        public int AssignmentId { get; set; }
+        public DateTime? SubmissionDate { get; set; }
+        public string? SubmissionText { get; set; }
+        public string? SubmissionFileUrl { get; set; }
+        //[Range(1, 100)]
+        //public int score { get; set; }
+        public Assignment? Assignment { get; set; }
         public AppUser AppUser { get; set; }
+        public bool IsSubmitted { get; set; }
     }
 }

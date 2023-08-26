@@ -297,22 +297,27 @@ namespace SchoolApp.Data.Migrations
                     b.Property<int>("AssignmentId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("SubmissionDate")
+                    b.Property<bool>("IsSubmitted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("StudentId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime?>("SubmissionDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("SubmissionFileUrl")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("score")
-                        .HasColumnType("int");
+                    b.Property<string>("SubmissionText")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("SubmissionId");
 
                     b.HasIndex("AssignmentId");
+
+                    b.HasIndex("StudentId");
 
                     b.ToTable("AssignmentSubmissions");
                 });
@@ -492,6 +497,14 @@ namespace SchoolApp.Data.Migrations
                         .HasForeignKey("AssignmentId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.HasOne("SchoolApp.Models.AppUser", "AppUser")
+                        .WithMany()
+                        .HasForeignKey("StudentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("AppUser");
 
                     b.Navigation("Assignment");
                 });

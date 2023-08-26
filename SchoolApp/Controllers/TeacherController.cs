@@ -14,30 +14,34 @@ namespace SchoolApp.Controllers
     public class TeacherController : Controller
     {
         private readonly ApplicationDbContext _context;
-        //private readonly UserManager<AppUser> userManager;
+        private readonly UserManager<IdentityUser> _userManager;
 
-        public TeacherController(ApplicationDbContext context)
+        public TeacherController(ApplicationDbContext context, UserManager<IdentityUser> userManager)
         {
-            _context = context;//I'll be back. eskeza sele erroru search argi eshi
-            //this.userManager = userManager;
+            _context = context;
+            _userManager = userManager;
         }
-        public IActionResult Index()
+        public async Task<IActionResult> IndexAsync()
         {
+            var user = await _userManager.GetUserAsync(User);
+            var userId = user.Id;
             List<Announcement> announcements = _context.Announcements.ToList();
             return View(announcements);
-           
+            
         }
 
         public IActionResult CreateAnnouncement()
         {
             return View();
+
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> CreateAnnouncement([Bind("AnnouncementTitle,AnnouncementDescription,StartDate,EndDate")] Announcement announcement)
         {
-            if(!ModelState.IsValid)
+            
+            if (!ModelState.IsValid)
             {
                 return View(announcement);
             }
@@ -45,6 +49,7 @@ namespace SchoolApp.Controllers
             _context.Add(announcement);
             await _context.SaveChangesAsync();
             return RedirectToAction("Index");
+
         }
 
         public async Task<IActionResult> AnnouncementEdit(int? id)
@@ -90,7 +95,7 @@ namespace SchoolApp.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(IndexAsync));
             }
             return View(annocuncement);
         }
@@ -111,7 +116,7 @@ namespace SchoolApp.Controllers
             return View(movie);
         }
 
-        [HttpPost, ActionName("Delete")]
+        [HttpPost, ActionName("ADelete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> ADeleteConfirmed(int id)
         {
@@ -119,14 +124,14 @@ namespace SchoolApp.Controllers
             {
                 return Problem("Entity set 'MvcMovieContext.Movie'  is null.");
             }
-            var movie = await _context.Announcements.SingleOrDefaultAsync(i => i.AnnouncementId == id);
+            var movie = await _context.Announcements.FindAsync(id);
             if (movie != null)
             {
                 _context.Announcements.Remove(movie);
             }
 
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(IndexAsync));
         }
 
 

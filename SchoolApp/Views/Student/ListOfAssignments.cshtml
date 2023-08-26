@@ -1,0 +1,52 @@
+﻿@model IEnumerable<SchoolApp.Models.Assignment>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Courses</h1>
+
+<p>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AssignmentTitle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AssignmentDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Deadline)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CourseId)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AssignmentTitle)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AssignmentDescription)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Deadline)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CourseId)
+                </td>
+                <td>
+
+                    <a asp-action="SubmitAssignment" asp-route-id="@item.AssignmentId">Submit</a> |
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

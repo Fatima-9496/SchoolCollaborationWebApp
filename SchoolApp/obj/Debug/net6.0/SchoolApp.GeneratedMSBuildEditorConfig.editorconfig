@@ -216,6 +216,18 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/fabay/source/repos/SchoolApp/SchoolApp/Views/Student/ListOfAssignments.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxMaXN0T2ZBc3NpZ25tZW50cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/fabay/source/repos/SchoolApp/SchoolApp/Views/Student/ListOfCourses.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxMaXN0T2ZDb3Vyc2VzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/fabay/source/repos/SchoolApp/SchoolApp/Views/Student/SubmitAssignment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxTdWJtaXRBc3NpZ25tZW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/fabay/source/repos/SchoolApp/SchoolApp/Views/Teacher/ADelete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhY2hlclxBRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
