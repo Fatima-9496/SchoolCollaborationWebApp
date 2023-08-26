@@ -1,0 +1,54 @@
+﻿@model SchoolApp.Models.Announcement;
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Movie</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AnnouncementEdit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="AnnouncementId" />
+            <div class="form-group">
+                <label asp-for="AnnouncementTitle" class="control-label"></label>
+                <input asp-for="AnnouncementTitle" class="form-control" />
+                <span asp-validation-for="AnnouncementTitle" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AnnouncementDescription" class="control-label"></label>
+                <input asp-for="AnnouncementDescription" class="form-control" />
+                <span asp-validation-for="AnnouncementDescription" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StartDate" class="control-label"></label>
+                <input asp-for="StartDate" class="form-control" />
+                <span asp-validation-for="StartDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EndDate" class="control-label"></label>
+                <input asp-for="EndDate" />
+                <span asp-validation-for="EndDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+

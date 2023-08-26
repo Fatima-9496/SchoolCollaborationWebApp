@@ -1,11 +1,49 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
-@{
-    ViewData["Title"] = "Privacy Policy";
-}
-<h1>@ViewData["Title"]</h1>
+﻿@model IEnumerable<SchoolApp.Models.Announcement>
 
-<p>Use this page to detail your site's privacy policy.</p>
+@{
+    ViewData["Title"] = "School App";
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AnnouncementTitle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AnnouncementDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StartDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EndDate)
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AnnouncementTitle)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AnnouncementDescription)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StartDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EndDate)
+                </td>
+                <td>
+                    <a asp-action="AnnouncementEdit" asp-route-id="@item.AnnouncementId">Edit</a>
+                    <a asp-action="ADelete" asp-route-id="@item.AnnouncementId">delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

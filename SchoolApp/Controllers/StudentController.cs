@@ -72,7 +72,7 @@ namespace SchoolApp.Controllers
             .Select(e => e.Id) 
             .FirstOrDefault();
             var columnValues = _context.AppUsers.Select(e => e.UserName).ToList();
-            string? check = rowId;
+
             foreach (var value in columnValues)
             {
                 if (value == CaptureUserName)
