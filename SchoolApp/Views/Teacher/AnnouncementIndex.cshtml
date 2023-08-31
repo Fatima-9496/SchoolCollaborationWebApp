@@ -3,7 +3,9 @@
 @{
     ViewData["Title"] = "School App";
 }
-
+<p>
+    <a asp-action="CreateAnnouncement">Create New Announcement</a>
+</p>
 <table class="table">
     <thead>
         <tr>
@@ -14,12 +16,14 @@
                 @Html.DisplayNameFor(model => model.AnnouncementDescription)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.StartDate)
+                @Html.DisplayNameFor(model => model.PostDate)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.EndDate)
+                @Html.DisplayNameFor(model => model.MediaUrl)
             </th>
-
+            <th>
+                @Html.DisplayNameFor(model => model.AnnouncementAuthor)
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -34,14 +38,17 @@
                     @Html.DisplayFor(modelItem => item.AnnouncementDescription)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.StartDate)
+                    @Html.DisplayFor(modelItem => item.PostDate)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.EndDate)
+                    @Html.DisplayFor(modelItem => item.MediaUrl)
                 </td>
                 <td>
-                    <a asp-action="AnnouncementEdit" asp-route-id="@item.AnnouncementId">Edit</a>
-                    <a asp-action="ADelete" asp-route-id="@item.AnnouncementId">delete</a>
+                    @Html.DisplayFor(modelItem => item.AnnouncementAuthor)
+                </td>
+                <td>
+                    <a asp-action="AnnouncementEdit" asp-route-id="@item.AnnouncementId">Edit |</a>
+                    <a asp-action="AnnouncementDelete" asp-route-id="@item.AnnouncementId">delete</a>
                 </td>
             </tr>
         }

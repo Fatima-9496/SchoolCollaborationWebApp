@@ -1,14 +1,12 @@
 ﻿@model SchoolApp.Models.Announcement;
-@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+
 @{
     ViewData["Title"] = "Edit";
 }
 
 <h1>Edit</h1>
 
-<h4>Movie</h4>
+<h4>Announcement</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -26,14 +24,20 @@
                 <span asp-validation-for="AnnouncementDescription" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="StartDate" class="control-label"></label>
-                <input asp-for="StartDate" class="form-control" />
-                <span asp-validation-for="StartDate" class="text-danger"></span>
+                <label asp-for="PostDate" class="control-label"></label>
+                <input asp-for="PostDate" class="form-control" />
+                <span asp-validation-for="PostDate" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="MediaUrl" class="form-label mt-4">Upload project video or image</label>
+                <input asp-for="MediaUrl" type="file" class="form-control-file" />
+                <span asp-validation-for="MediaUrl" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="EndDate" class="control-label"></label>
-                <input asp-for="EndDate" />
-                <span asp-validation-for="EndDate" class="text-danger"></span>
+                <label asp-for="AnnouncementAuthor" class="control-label"></label>
+                <input asp-for="AnnouncementAuthor" />
+                <span asp-validation-for="AnnouncementAuthor" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />

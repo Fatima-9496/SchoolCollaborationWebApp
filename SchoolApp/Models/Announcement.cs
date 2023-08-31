@@ -10,7 +10,9 @@ namespace SchoolApp.Models
         public string AnnouncementTitle { get; set; }
         //[StringLength(50)]
         public string AnnouncementDescription { get; set; }
-        public DateTime? StartDate { get; set; }
-        public DateTime? EndDate { get; set; }
+        public DateTime? PostDate { get; set; }
+        public string MediaUrl { get; set; }
+        public string AnnouncementAuthor { get; set; }  
+
     }
 }

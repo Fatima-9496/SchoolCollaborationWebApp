@@ -1,43 +1,52 @@
 ﻿@model SchoolApp.Models.Announcement
 @{
-    ViewData["Title"] = "Announcement";
+    ViewData["Title"] = "Create Announcement";
 }
-<form method="post" asp-action="CreateAnnouncement">
-    <fieldset>
-        <legend>Announcement Form</legend>
-        <div class="form-group row">
-            <label asp-for="AnnouncementTitle" class="col-sm-2 col-form-label">Announcement</label>
-            <div class="col-sm-10">
-                <input type="text" readonly="" class="form-control-plaintext">
-            </div>
-        </div>
-        <div class="form-group">
-            <label asp-for="AnnouncementTitle" class="form-label mt-4">Announcement Title</label>
-            <input asp-for="AnnouncementTitle" type="text" class="form-control" placeholder="Enter Announcement Title">
-            <span asp-validation-for="AnnouncementTitle" class="text-danger"></span>
-        </div>
-        <div class="form-group">
-            <label asp-for="AnnouncementDescription" class="form-label mt-4">Announcement Description</label>
-            <textarea asp-for="AnnouncementDescription" class="form-control" id="exampleTextarea" rows="4"></textarea>
-            <span asp-validation-for="AnnouncementDescription" class="text-danger"></span>
+<div class="row">
+    <div class="col-md-4">
+        <form method="post" asp-action="CreateAnnouncement">
+            <fieldset>
+                <legend>Announcement Form</legend>
+                <div class="form-group row">
+                  
+                </div>
+                <div class="form-group">
+                    <label asp-for="AnnouncementTitle" class="form-label mt-4">Announcement Title</label>
+                    <input asp-for="AnnouncementTitle" type="text" class="form-control" placeholder="Enter Announcement Title">
+                    <span asp-validation-for="AnnouncementTitle" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="AnnouncementDescription" class="form-label mt-4">Announcement Description</label>
+                    <textarea asp-for="AnnouncementDescription" class="form-control" id="exampleTextarea" rows="4"></textarea>
+                    <span asp-validation-for="AnnouncementDescription" class="text-danger"></span>
 
-        </div>
+                </div>
 
-        <div class="form-group">
-            @Html.AntiForgeryToken()
-            @Html.LabelFor(model => model.StartDate)
-            @Html.TextBoxFor(model => model.StartDate, new { @class = "form-control", type = "date" })
-            <span asp-validation-for="StartDate" class="text-danger"></span>
-        </div>
-        <div class="form-group">
-            @Html.AntiForgeryToken()
-            @Html.LabelFor(model => model.EndDate)
-            @Html.TextBoxFor(model => model.EndDate, new { @class = "form-control", type = "date" })
-            <span asp-validation-for="EndDate" class="text-danger"></span>
-        </div>
-        <br/>
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </fieldset>
-</form>
+                <div class="form-group">
+                    @Html.AntiForgeryToken()
+                    @Html.LabelFor(model => model.PostDate)
+                    @Html.TextBoxFor(model => model.PostDate, new { @class = "form-control", type = "date" })
+                    <span asp-validation-for="PostDate" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="MediaUrl" class="form-label mt-4">Upload announcement media</label>
+                    <input asp-for="MediaUrl" type="file" class="form-control-file" />
+                    <span asp-validation-for="MediaUrl" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="AnnouncementAuthor" class="form-label mt-4">Announcement Author Name</label>
+                    <input asp-for="AnnouncementAuthor" type="text" class="form-control" placeholder="Enter Announcement Title">
+                    <span asp-validation-for="AnnouncementAuthor" class="text-danger"></span>
+                </div>
+                <br/>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </fieldset>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="AnnouncementIndex">Back to List</a>
+</div>
 
 

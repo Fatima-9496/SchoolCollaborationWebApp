@@ -13,8 +13,9 @@ namespace SchoolApp.Models
         public string AssignmentDescription { get; set; }
         public DateTime? Deadline { get; set; }
         [ForeignKey("Course")]
-        public int CourseId { get; set; }
-        public Course Course { get; set; }
+        public int? CourseId { get; set; }
+        public Course? Course { get; set; }
+        public string Coursename { get; set; }
 
         public ICollection<AssignmentSubmission>? AssignmentSubmissions { get; set; }
 

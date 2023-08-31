@@ -238,6 +238,10 @@ namespace SchoolApp.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AnnouncementId"), 1L, 1);
 
+                    b.Property<string>("AnnouncementAuthor")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("AnnouncementDescription")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -246,10 +250,11 @@ namespace SchoolApp.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime?>("EndDate")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("MediaUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime?>("StartDate")
+                    b.Property<DateTime?>("PostDate")
                         .HasColumnType("datetime2");
 
                     b.HasKey("AnnouncementId");
@@ -273,8 +278,12 @@ namespace SchoolApp.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("CourseId")
+                    b.Property<int?>("CourseId")
                         .HasColumnType("int");
+
+                    b.Property<string>("Coursename")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("Deadline")
                         .HasColumnType("datetime2");
@@ -294,14 +303,13 @@ namespace SchoolApp.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("SubmissionId"), 1L, 1);
 
-                    b.Property<int>("AssignmentId")
+                    b.Property<int?>("AssignmentId")
                         .HasColumnType("int");
 
-                    b.Property<bool>("IsSubmitted")
+                    b.Property<bool?>("IsSubmitted")
                         .HasColumnType("bit");
 
                     b.Property<string>("StudentId")
-                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<DateTime?>("SubmissionDate")
@@ -335,7 +343,6 @@ namespace SchoolApp.Data.Migrations
                         .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("CourseName")
-                        .IsRequired()
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
 
@@ -361,9 +368,6 @@ namespace SchoolApp.Data.Migrations
                     b.Property<int?>("CourseId")
                         .HasColumnType("int");
 
-                    b.Property<string>("EUserName")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("StudentId")
                         .HasColumnType("nvarchar(450)");
 
@@ -387,7 +391,7 @@ namespace SchoolApp.Data.Migrations
                     b.Property<DateTime>("DateCompleted")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("ImageMediaUrl")
+                    b.Property<string>("MediaUrl")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -396,10 +400,6 @@ namespace SchoolApp.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ProjectTitle")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("VideoMediaUrl")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -483,9 +483,7 @@ namespace SchoolApp.Data.Migrations
                 {
                     b.HasOne("SchoolApp.Models.Course", "Course")
                         .WithMany("Assignments")
-                        .HasForeignKey("CourseId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("CourseId");
 
                     b.Navigation("Course");
                 });
@@ -495,14 +493,11 @@ namespace SchoolApp.Data.Migrations
                     b.HasOne("SchoolApp.Models.Assignment", "Assignment")
                         .WithMany("AssignmentSubmissions")
                         .HasForeignKey("AssignmentId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("SchoolApp.Models.AppUser", "AppUser")
                         .WithMany()
-                        .HasForeignKey("StudentId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("StudentId");
 
                     b.Navigation("AppUser");
 

@@ -1,0 +1,29 @@
+﻿@model List<SchoolApp.Models.AssignmentSubmission>
+
+@{
+    ViewData["Title"] = "Enrollments with Details";
+}
+
+<h1>List of assignment submissions</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Submitted Date</th>
+            <th>Submitted Text</th>
+            <th>Submitted File</th>
+            <th>Student Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var sub in Model)
+        {
+            <tr>
+                <td>@(sub.SubmissionDate != null ? sub.SubmissionDate : "N/A")</td>
+                <td>@(sub.SubmissionText != null ? sub.SubmissionText : "N/A")</td>
+                <td>@(sub.SubmissionFileUrl != null ? sub.SubmissionFileUrl : "N/A")</td>
+                <td>@(sub.AppUser != null ? sub.AppUser.UserName : "N/A")</td>
+            </tr>
+        }
+    </tbody>
+</table>

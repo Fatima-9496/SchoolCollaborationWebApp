@@ -13,7 +13,6 @@ namespace SchoolApp.Models
         //[StringLength(60)]
         public string ProjectDescription { get; set; }
         public DateTime DateCompleted { get; set; }
-        public string ImageMediaUrl { get; set; }
-        public string VideoMediaUrl { get; set; }
+        public string MediaUrl { get; set; }        
     }
 }

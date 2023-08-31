@@ -18,5 +18,16 @@ namespace SchoolApp.Data
         public DbSet<Announcement> Announcements { get; set; }
         public DbSet<AppUser> AppUsers { get; set; }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<Assignment>()
+                .HasMany(a => a.AssignmentSubmissions)
+                .WithOne(s => s.Assignment)
+                .OnDelete(DeleteBehavior.Cascade);
+        }
+
+
     }
 }

@@ -7,7 +7,7 @@ namespace SchoolApp.Models
         [Key]
         public int CourseId { get; set; }
         [StringLength(20, MinimumLength = 3)]
-        public string CourseName { get; set; }
+        public string? CourseName { get; set; }
         [StringLength(50)]
         public string? CourseDescription { get; set; }
         public DateTime? StartDate { get; set; }

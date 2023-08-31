@@ -15,8 +15,6 @@ namespace SchoolApp.Controllers
     [Authorize(Roles = "Student")]
     public class StudentController : Controller
     {
-        //public bool UserExist = false;
-
         private readonly ApplicationDbContext _context;
         private readonly UserManager<IdentityUser> _userManager;
 
@@ -28,6 +26,12 @@ namespace SchoolApp.Controllers
         public IActionResult Index()
         {
             return View();
+        }
+        public async Task<IActionResult> ProjectIndex()
+        {
+            List<Project> projects = await _context.Projects.ToListAsync();
+
+            return View(projects);
         }
         public IActionResult CreateProject()
         {
@@ -41,21 +45,83 @@ namespace SchoolApp.Controllers
             {
                 return View(project);
             }
-            if (project.ImageMediaUrl != null && project.ImageMediaUrl.Length > 0)
-            {
-                // Save the image file to the server and set the ImageUrl property
             
-                project.ImageMediaUrl = "path_to_uploaded_image";
-            }
-
-            if (project.VideoMediaUrl != null && project.VideoMediaUrl.Length > 0)
-            {
-                // Save the video file to the server and set the VideoUrl property
-                project.VideoMediaUrl = "path_to_uploaded_video";
-            }
             _context.Add(project);
             await _context.SaveChangesAsync();
-            return RedirectToAction("Index");
+            return RedirectToAction("ProjectIndex");
+        }
+        public async Task<IActionResult> ProjectEdit(int? id)
+        {
+            if (id == null || _context.Projects == null)
+            {
+                return NotFound();
+            }
+            var project = await _context.Projects.FindAsync(id);
+            if (project == null)
+            {
+                return NotFound();
+            }
+            return View(project);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ProjectEdit(int id, Project project)
+        {
+            if (id != project.ProjectId)
+            {
+                return NotFound();
+            }
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _context.Update(project);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!ProjectExit(project.ProjectId))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+                return RedirectToAction(nameof(ProjectIndex));
+            }
+            return View(project);
+        }
+        public async Task<IActionResult> ProjectDelete(int? id)
+        {
+            if (id == null || _context.Projects == null)
+            {
+                return NotFound();
+            }
+            var project = await _context.Projects
+                .FindAsync(id);
+            if (project == null)
+            {
+                return NotFound();
+            }
+            return View(project);
+        }
+        [HttpPost, ActionName("ProjectDelete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ProjectDeleteConfirmation(int id)
+        {
+            if (_context.Projects == null)
+            {
+                return Problem("Entity set 'ApplicationDbContext.Project' is null.");
+            }
+            var project = await _context.Projects.FindAsync(id);
+            if (project != null)
+            {
+                _context.Projects.Remove(project);
+            }
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(ProjectIndex));
         }
         public async Task<IActionResult> ListOfCourses()
         {
@@ -64,24 +130,16 @@ namespace SchoolApp.Controllers
                           Problem("Entity set 'ApplicationDbContext.Course'  is null.");
         }
         public IActionResult EnrollInACourse()
-        {
-            
+        {            
             return View();
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> EnrollInACourse(Enrollment enrollment, int id)
         {
-            //string CaptureUserName = euserName;
             var user = await _userManager.GetUserAsync(User);
             var userId = user.Id;
-            //string? rowId = _context.AppUsers
-            //.Where(e => e.UserName == CaptureUserName)
-            //.Select(e => e.Id) 
-            //.FirstOrDefault();
-            //var columnValues = _context.AppUsers.Select(e => e.UserName).ToList();
-
-            //var courseItem = await _context.Courses.FindAsync(id);
+            
             var enroll = new Enrollment
             {
                 CourseId = id,
@@ -94,36 +152,112 @@ namespace SchoolApp.Controllers
             }
             _context.Add(enroll);
             await _context.SaveChangesAsync();
-            //_context.Add(enrollment);
-            //await _context.SaveChangesAsync();
-
             return RedirectToAction("Index");
                         
         }
-        public async Task<IActionResult> ListOfAssignmentsAsync()
+        public IActionResult EnrollmentDelete(int? id)
         {
-            return _context.Assignments != null ?
-                         View(await _context.Assignments.ToListAsync()) :
-                         Problem("Entity set 'ApplicationDbContext.Assignment'  is null.");
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var enrollment = _context.Enrollments
+            .Include(a => a.Course)
+            .FirstOrDefault(a => a.EnrollmentId == id);
+            if (enrollment == null)
+            {
+                return NotFound();
+            }
+
+            return View(enrollment);
         }
-        public IActionResult SubmitAssignment()
+        [HttpPost, ActionName("EnrollmentDelete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> EnrollmentDeleteConfirmed(int id)
         {
 
-            return View();
+            var enrollment = await _context.Enrollments.FindAsync(id);
+            if (enrollment != null)
+            {
+                _context.Enrollments.Remove(enrollment);
+            }
+            else
+            {
+                return Problem("Entity set is null.");
+            }
+
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
+        public async Task<IActionResult> ListOfAssignmentsAsync()
+        {
+            var ListofAss = await _context.Assignments.ToListAsync(); 
+            //_context.Assignments != null ?
+            //             View() :
+            //             Problem("Entity set 'ApplicationDbContext.Assignment'  is null.")
+            return View(ListofAss);
+        }
+        public IActionResult SubmitAssignment(int id)
+        {
+            var assignment = _context.Assignments
+            .Find(id);
+            //ViewBag.IsSubmitted = false;
+            return View(assignment);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> SubmitAssignment(int id,AssignmentSubmission assignmentSubmission, int id)
-        {
+        public async Task<IActionResult> SubmitAssignment(int? id,AssignmentSubmission assignmentSubmission, string? submissionText, string? submissionFile)
+        {            
+            var user = await _userManager.GetUserAsync(User);
+            var userId = user.Id;
+
+            //AssignmentSubmission assignmentSubmission = _context.AssignmentSubmissions
+            //.Include(a => a.Assignment) // Eager load the associated assignment
+            //.FirstOrDefault(a => a.AssignmentId == assignmentId);
+
+            
+
+            var submit = new AssignmentSubmission
+            {
+                AssignmentId = id,
+                StudentId = userId,
+                SubmissionText = submissionText,
+                SubmissionFileUrl = submissionFile,
+                IsSubmitted = true,
+                SubmissionDate = DateTime.Now
+            };
+
             if (ModelState.IsValid)
             {
-                _context.Add(assignmentSubmission);
+                ViewBag.IsSubmitted = false;
+                _context.Add(submit);
                 await _context.SaveChangesAsync();
+               
+               
                 return RedirectToAction(nameof(Index));
             }
+            var assignment = _context.AssignmentSubmissions
+                .Include(a => a.Assignment)
+                .FirstOrDefault(a => a.AssignmentId == id);
+
+            if (assignment == null)
+            {
+                return NotFound();
+            }
+
+            if (DateTime.Now > assignment.Assignment.Deadline)
+            {
+                ViewBag.SubmissionMessage = "Submission closed. Deadline has been reached.";
+                return View("SubmissionClosed");
+            }
+            ViewBag.ISubmitted = true;
             return View(assignmentSubmission);
         }
+        private bool ProjectExit(int id)
+        {
+            return (_context.Projects?.Any(e => e.ProjectId == id)).GetValueOrDefault();
+        }
     }
-
-    }
+    
 }

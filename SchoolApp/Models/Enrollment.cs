@@ -7,14 +7,11 @@ namespace SchoolApp.Models
     {
         [Key]
         public int EnrollmentId { get; set; }
-        public string? EUserName { get; set; }
         [ForeignKey("Course")]
         public int? CourseId { get; set; }
         [ForeignKey("AppUser")]
         public String? StudentId { get; set; }
         public Course? Course { get; set; }
         public AppUser? AppUser { get; set; }
-        //public virtual AspnetUser Student { get; set; }
-
     }
 }

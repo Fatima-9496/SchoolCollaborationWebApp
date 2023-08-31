@@ -1,0 +1,51 @@
+﻿@model IEnumerable<dynamic>
+
+@{
+    ViewData["Title"] = "Assignment";
+}
+<p>
+    <a asp-action="CreateAssignment">Create New Assignment</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Assignment Title
+            </th>
+            <th>
+                Assignment Description
+            </th>
+            <th>
+                Deadline
+            </th>
+            <th>
+                Course Name
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.AssignmentTitle
+                </td>
+                <td>
+                    @item.AssignmentDescription
+                </td>
+                <td>
+                    @item.Deadline
+                </td>
+                <td>
+                    @item.CourseName
+                </td>
+                <td>
+                    <a asp-action="AssignmentEdit" asp-route-id="@item.AssignmentId">Edit |</a>
+                    <a asp-action="AssignmentDelete" asp-route-id="@item.AssignmentId">delete</a>
+                    <a asp-action="ListOfAssignSubmissions" asp-route-id="@item.AssignmentId">List of Submisions</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

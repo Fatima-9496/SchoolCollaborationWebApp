@@ -1,0 +1,52 @@
+﻿@model IEnumerable<SchoolApp.Models.Project>
+
+@{
+    ViewData["Title"] = "project";
+}
+<p>
+    <a asp-action="CreateProject">Create New Project</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ProjectTitle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProjectDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateCompleted)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MediaUrl)
+            </th>
+            
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProjectTitle)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProjectDescription)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateCompleted)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MediaUrl)
+                </td>
+                
+                <td>
+                    <a asp-action="ProjectEdit" asp-route-id="@item.ProjectId">Edit |</a>
+                    <a asp-action="ProjectDelete" asp-route-id="@item.ProjectId">delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

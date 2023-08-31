@@ -1,19 +1,20 @@
-﻿@model SchoolApp.Models.AssignmentSubmission
+﻿@model SchoolApp.Models.Assignment
 @{
-    ViewData["Title"] = "Announcement";
+    ViewData["Title"] = "Assignment";
 }
-@if (Model.IsSubmitted)
-{
-    <p>Submitted Time: @Model.SubmissionDate.ToString()</p>
-    <p>✓ Submission Received</p>
-}
-else
-{
+@if (DateTime.Now > Model.Deadline)
+        {
+            <p class="text-danger">Submission closed. Deadline has been reached.</p>
+        }
+        else
+        {
 <form method="post" asp-action="SubmitAssignment">
     <fieldset>
-      
-        <div class="form-group">
-            <label asp-for="@Model.Assignment.AssignmentTitle" class="form-label mt-4">Announcement Title</label>
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="AssignmentId" />
+        
+       @* <div class="form-group">
+            <label asp-for="@Model.AssignmentTitle" class="form-label mt-4">Announcement Title</label>
         </div>
         <div class="form-group">
             <label asp-for="@Model.Assignment.AssignmentDescription" class="form-label mt-4">Announcement Description</label>
@@ -21,21 +22,25 @@ else
         </div>
         <div class="form-group">
             <label asp-for="@Model.Assignment.Deadline" class="form-label mt-4">Announcement Description</label>
+        </div>*@
+        <div class="form-group">
+            <label name="SubmissionText" class="form-label mt-4">submission text</label>
+                <input name="SubmissionText" type="text" name="submissionText" class="form-control" placeholder="Enter Announcement Title">
+            @*<span asp-validation-for="SubmissionText" class="text-danger"></span>*@
         </div>
         <div class="form-group">
-            <label asp-for="SubmissionText" class="form-label mt-4">submission text</label>
-            <input asp-for="SubmissionText" type="text" class="form-control" placeholder="Enter Announcement Title">
-            <span asp-validation-for="SubmissionText" class="text-danger"></span>
-        </div>
-        <div class="form-group">
-            <label asp-for="SubmissionFileUrl" class="form-label mt-4">Upload Assignment file</label>
-            <input asp-for="SubmissionFileUrl" type="file" class="form-control-file" />
-            <span asp-validation-for="SubmissionFileUrl" class="text-danger"></span>
+                <label name="SubmissionFileUrl" class="form-label mt-4">Upload Assignment file</label>
+                <input name="SubmissionFileUrl" type="file" class="form-control-file" name="submissionFile" />
+            @*<span asp-validation-for="SubmissionFileUrl" class="text-danger"></span>*@
         </div>
         
         <br />
         <button type="submit" class="btn btn-primary">Submit</button>
     </fieldset>
+    @*@if (Model.IsSubmitted)
+    {
+        <p>✓ Assignment Submitted</p>
+    }*@
 </form>
 
 }

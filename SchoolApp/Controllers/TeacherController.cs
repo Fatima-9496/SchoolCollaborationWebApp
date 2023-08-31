@@ -21,62 +21,48 @@ namespace SchoolApp.Controllers
             _context = context;
             _userManager = userManager;
         }
-        public async Task<IActionResult> IndexAsync()
+        public async Task<IActionResult> AnnouncementIndex()
         {
-            var user = await _userManager.GetUserAsync(User);
-            var userId = user.Id;
-            List<Announcement> announcements = _context.Announcements.ToList();
-            return View(announcements);
-            
+            List<Announcement> announcements = await _context.Announcements.ToListAsync();
+            return View(announcements);            
         }
-
         public IActionResult CreateAnnouncement()
         {
             return View();
-
         }
-
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> CreateAnnouncement([Bind("AnnouncementTitle,AnnouncementDescription,StartDate,EndDate")] Announcement announcement)
-        {
-            
+        public async Task<IActionResult> CreateAnnouncement(Announcement announcement)
+        {            
             if (!ModelState.IsValid)
             {
                 return View(announcement);
-            }
-            
+            }            
             _context.Add(announcement);
             await _context.SaveChangesAsync();
-            return RedirectToAction("Index");
-
+            return RedirectToAction("AnnouncementIndex");
         }
-
         public async Task<IActionResult> AnnouncementEdit(int? id)
         {
             if (id == null || _context.Announcements == null)
             {
                 return NotFound();
             }
-
             var announcement = await _context.Announcements.FindAsync(id);
             if (announcement == null)
             {
                 return NotFound();
             }
             return View(announcement);
-        }
-
-        
+        }        
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> AnnouncementEdit(int id, [Bind("AnnouncementId,AnnouncementTitle,AnnouncementDescription,StartDate,EndDate")] Announcement annocuncement)
+        public async Task<IActionResult> AnnouncementEdit(int id, Announcement annocuncement)
         {
             if (id != annocuncement.AnnouncementId)
             {
                 return NotFound();
             }
-
             if (ModelState.IsValid)
             {
                 try
@@ -95,83 +81,45 @@ namespace SchoolApp.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(IndexAsync));
+                return RedirectToAction(nameof(AnnouncementIndex));
             }
             return View(annocuncement);
         }
-        public async Task<IActionResult> ADelete(int? id)
+        public async Task<IActionResult> AnnouncementDelete(int? id)
         {
             if (id == null || _context.Announcements == null)
             {
                 return NotFound();
             }
-
-            var movie = await _context.Announcements
+            var announcement = await _context.Announcements
                 .FindAsync(id);
-            if (movie == null)
+            if (announcement == null)
             {
                 return NotFound();
             }
-
-            return View(movie);
+            return View(announcement);
         }
-
-        [HttpPost, ActionName("ADelete")]
+        [HttpPost, ActionName("AnnouncementDelete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> ADeleteConfirmed(int id)
+        public async Task<IActionResult> AnnouncementDeleteConfirmed(int id)
         {
             if (_context.Announcements == null)
             {
-                return Problem("Entity set 'MvcMovieContext.Movie'  is null.");
+                return Problem("Entity set 'ApplicationDbContext.Announcement' is null.");
             }
-            var movie = await _context.Announcements.FindAsync(id);
-            if (movie != null)
+            var announcement = await _context.Announcements.FindAsync(id);
+            if (announcement != null)
             {
-                _context.Announcements.Remove(movie);
+                _context.Announcements.Remove(announcement);
             }
-
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(IndexAsync));
+            return RedirectToAction(nameof(AnnouncementIndex));
         }
-
-
-        //[HttpPost, ActionName("Delete")]
-        //[ValidateAntiForgeryToken]
-        //public async Task<IActionResult> DeleteConfirmed(int id)
-        //{
-
-        //    var uTask = await _context.Announcements.FindAsync(id);
-        //    if (uTask != null)
-        //    {
-        //        _context.Announcements.Remove(uTask);
-        //    }
-        //    else
-        //    {
-        //        return Problem("Entity set   is null.");
-        //    }
-
-        //    await _context.SaveChangesAsync();
-        //    return RedirectToAction(nameof(Index));
-        //}
-
-        //public async Task<IActionResult> AnnouncementDelete(int? id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return NotFound();
-        //    }
-        //    var user = await userManager.GetUserAsync(User);
-
-        //    var uTask = _context.Announcements
-        //        .FirstOrDefault(m => m.AnnouncementId == id);
-        //    if (uTask == null)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    return View(uTask);
-        //}
-
+        public async Task<IActionResult> CourseIndex()
+        {
+            List<Course> courses = await _context.Courses.ToListAsync();
+            return View(courses);
+        }
         public IActionResult CreateCourse()
         {
             return View();
@@ -184,95 +132,104 @@ namespace SchoolApp.Controllers
             if (!ModelState.IsValid)
             {
                 return View(course);
-            }
-            
+            }            
             _context.Add(course);
             await _context.SaveChangesAsync();
-            return RedirectToAction("Index");
+            return RedirectToAction("CourseIndex");
         }
-        //public async Task<IActionResult> CourseEdit(int? id)
-        //{
-        //    if (id == null || _context.Courses == null)
-        //    {
-        //        return NotFound();
-        //    }
+        public async Task<IActionResult> CourseEdit(int? id)
+        {
+            if (id == null || _context.Courses == null)
+            {
+                return NotFound();
+            }
 
-        //    var course = await _context.Courses.FindAsync(id);
-        //    if (course == null)
-        //    {
-        //        return NotFound();
-        //    }
-        //    return View(course);
-        //}
+            var course = await _context.Courses.FindAsync(id);
+            if (course == null)
+            {
+                return NotFound();
+            }
+            return View(course);
+        }
 
 
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public async Task<IActionResult> CourseEdit(int id, Course course)
-        //{
-        //    if (id != course.CourseId)
-        //    {
-        //        return NotFound();
-        //    }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> CourseEdit(int id, Course course)
+        {
+            if (id != course.CourseId)
+            {
+                return NotFound();
+            }
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _context.Update(course);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!AnnouncementExists(course.CourseId))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+                return RedirectToAction(nameof(CourseIndex));
+            }
+            return View(course);
+        }
+        public async Task<IActionResult> CourseDelete(int? id)
+        {
+            if (id == null || _context.Courses == null)
+            {
+                return NotFound();
+            }
+            var course = await _context.Courses
+                .FindAsync(id);
+            if (course == null)
+            {
+                return NotFound();
+            }
+            return View(course);
+        }
 
-        //    if (ModelState.IsValid)
-        //    {
-        //        try
-        //        {
-        //            _context.Update(course);
-        //            await _context.SaveChangesAsync();
-        //        }
-        //        catch (DbUpdateConcurrencyException)
-        //        {
-        //            if (!CourseExists(course.CourseId))
-        //            {
-        //                return NotFound();
-        //            }
-        //            else
-        //            {
-        //                throw;
-        //            }
-        //        }
-        //        return RedirectToAction(nameof(Index));
-        //    }
-        //    return View(course);
-        //}
-        //public IActionResult CourseDelete(int id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return NotFound();
-        //    }
+        [HttpPost, ActionName("CourseDelete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> CourseDeleteConfirmed(int id)
+        {
+            if (_context.Courses == null)
+            {
+                return Problem("Entity set 'ApplicationDbContext.Course' is null.");
+            }
+            var course = await _context.Courses.FindAsync(id);
+            if (course != null)
+            {
+                _context.Courses.Remove(course);
+            }
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(CourseIndex));
+        }
+        public async Task<IActionResult> AssignmentIndex()
+        {
+            var assignmentsWithCourses = await _context.Assignments
+            .Include(a => a.Course)
+            .Select(a => new
+            {
+                a.AssignmentId,
+                a.AssignmentTitle,
+                a.AssignmentDescription,
+                a.Deadline,
+                CourseName = a.Course.CourseName
+            })
+            .ToListAsync();
 
-        //    var course = _context.Courses
-        //        .FirstOrDefault(m => m.CourseId == id);
-        //    if (course == null)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    return View(course);
-        //}
-
-        //[HttpPost, ActionName("Delete")]
-        //[ValidateAntiForgeryToken]
-        //public async Task<IActionResult> CourseDeleteConfirmed(int id)
-        //{
-
-        //    var course = await _context.Courses.FindAsync(id);
-        //    if (course != null)
-        //    {
-        //        _context.Courses.Remove(course);
-        //    }
-        //    else
-        //    {
-        //        return Problem("Entity set is null.");
-        //    }
-
-        //    await _context.SaveChangesAsync();
-        //    return RedirectToAction(nameof(Index));
-        //}
-
+            return View(assignmentsWithCourses);                   
+        }
         public IActionResult CreateAssignment()
         {
             var courseNames = _context.Courses.Select(course => course.CourseName).ToList();
@@ -290,90 +247,126 @@ namespace SchoolApp.Controllers
             }
             _context.Add(assignment);
             await _context.SaveChangesAsync();
-            return RedirectToAction("Index");
+            return RedirectToAction("AssignmentIndex");
         }
-        //public async Task<IActionResult> AssignmentEdit(int? id)
-        //{
-        //    if (id == null || _context.Assignments == null)
-        //    {
-        //        return NotFound();
-        //    }
+        public async Task<IActionResult> AssignmentEdit(int? id)
+        {
+            var assignment = await _context.Assignments
+            .Include(a => a.Course)
+            .FirstOrDefaultAsync(a => a.AssignmentId == id);
 
-        //    var assignment = await _context.Assignments.FindAsync(id);
-        //    if (assignment == null)
-        //    {
-        //        return NotFound();
-        //    }
-        //    return View(assignment);
-        //}
+            if (assignment == null)
+            {
+                return NotFound();
+            }
 
+            var courseNames = await _context.Courses
+                .Select(c => new SelectListItem
+                {
+                    Value = c.CourseId.ToString(),
+                    Text = c.CourseName
+                })
+                .ToListAsync();
 
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public async Task<IActionResult> AssignmentEdit(int id, Assignment assignment)
-        //{
-        //    if (id != assignment.AssignmentId)
-        //    {
-        //        return NotFound();
-        //    }
+            ViewBag.CourseNames = courseNames;
 
-        //    if (ModelState.IsValid)
-        //    {
-        //        try
-        //        {
-        //            _context.Update(assignment);
-        //            await _context.SaveChangesAsync();
-        //        }
-        //        catch (DbUpdateConcurrencyException)
-        //        {
-        //            if (!AssignmentExists(assignment.AssignmentId))
-        //            {
-        //                return NotFound();
-        //            }
-        //            else
-        //            {
-        //                throw;
-        //            }
-        //        }
-        //        return RedirectToAction(nameof(Index));
-        //    }
-        //    return View(assignment);
-        //}
-        //public IActionResult AssignmentDelete(int id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return NotFound();
-        //    }
+            return View(assignment);                       
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> AssignmentEdit(int id, Assignment assignment)
+        {
+            if (id != assignment.AssignmentId)
+            {
+                return NotFound();
+            }
 
-        //    var assignment = _context.Assignments
-        //        .FirstOrDefault(m => m.AssignmentId == id);
-        //    if (assignment == null)
-        //    {
-        //        return NotFound();
-        //    }
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _context.Update(assignment);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!AssignmentExists(assignment.AssignmentId))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+                return RedirectToAction(nameof(AssignmentIndex));
+            }
 
-        //    return View(assignment);
-        //}
+            ViewBag.CourseNames = _context.Courses
+                .Select(c => new SelectListItem
+                {
+                    Value = c.CourseId.ToString(),
+                    Text = c.CourseName
+                })
+                .ToList();
 
-        //[HttpPost, ActionName("Delete")]
-        //[ValidateAntiForgeryToken]
-        //public async Task<IActionResult> AssignmentDeleteConfirmed(int id)
-        //{
+            return View(assignment);                      
+        }
+        public IActionResult AssignmentDelete(int? id)
+        {
 
-        //    var assignment = await _context.Assignments.FindAsync(id);
-        //    if (assignment != null)
-        //    {
-        //        _context.Assignments.Remove(assignment);
-        //    }
-        //    else
-        //    {
-        //        return Problem("Entity set is null.");
-        //    }
+            if (id == null)
+            {
+                return NotFound();
+            }
 
-        //    await _context.SaveChangesAsync();
-        //    return RedirectToAction(nameof(Index));
-        //}
+            var assignment = _context.Assignments
+            .Include(a => a.Course)
+            .FirstOrDefault(a => a.AssignmentId == id);
+            if (assignment == null)
+            {
+                return NotFound();
+            }
+
+            return View(assignment);
+        }
+        [HttpPost, ActionName("AssignmentDelete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> AssignmentDeleteConfirmed(int id)
+        {
+
+            var assignment = await _context.Assignments.FindAsync(id);
+            if (assignment != null)
+            {
+                _context.Assignments.Remove(assignment);
+            }
+            else
+            {
+                return Problem("Entity set is null.");
+            }
+
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(AssignmentIndex));
+        }
+        public async Task<IActionResult> ListOfEnrollements()
+        {
+            var enrollmentsWithDetails = await _context.Enrollments
+            .Include(e => e.Course)
+            .Include(e => e.AppUser)
+            .ToListAsync();
+
+            return View(enrollmentsWithDetails);
+        }
+        public async Task<IActionResult> ListOfAssignSubmissions(int? id)
+        {
+            var submissions = await _context.AssignmentSubmissions
+            .Where(submission => submission.AssignmentId == id)
+            .Include(submission => submission.AppUser)
+            .Include(submission => submission.Assignment)
+        .ToListAsync();
+
+            return View(submissions);
+        }
         private bool AnnouncementExists(int id)
         {
             return (_context.Announcements?.Any(e => e.AnnouncementId == id)).GetValueOrDefault();

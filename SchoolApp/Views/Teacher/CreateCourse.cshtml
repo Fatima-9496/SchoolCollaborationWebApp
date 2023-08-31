@@ -1,19 +1,16 @@
 ﻿@model SchoolApp.Models.Course
 @{
-    ViewData["Title"] = "Announcement";
+    ViewData["Title"] = "Course";
 }
 <form method="post" asp-action="CreateCourse">
     <fieldset>
-        <legend>Announcement Form</legend>
+        <legend>Course Form</legend>
         <div class="form-group row">
-            <label asp-for="CourseName" class="col-sm-2 col-form-label">Course Name</label>
-            <div class="col-sm-10">
-                <input type="text" readonly="" class="form-control-plaintext">
-            </div>
+            
         </div>
         <div class="form-group">
             <label asp-for="CourseName" class="form-label mt-4">course Title</label>
-            <input asp-for="CourseName" type="text" class="form-control" placeholder="Enter Announcement Title">
+            <input asp-for="CourseName" type="text" class="form-control" placeholder="Enter Course Title">
             <span asp-validation-for="CourseName" class="text-danger"></span>
         </div>
         <div class="form-group">
@@ -39,3 +36,7 @@
         <button type="submit" class="btn btn-primary">Submit</button>
     </fieldset>
 </form>
+<br/>
+<div>
+    <a asp-action="CourseIndex">Back to List</a>
+</div>

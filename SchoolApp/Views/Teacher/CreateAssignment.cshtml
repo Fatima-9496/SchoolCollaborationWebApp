@@ -14,12 +14,12 @@
         <div class="form-group">
             <label asp-for="AssignmentTitle" class="form-label mt-4">Assignment Title</label>
             <input asp-for="AssignmentTitle" type="text" class="form-control" placeholder="Enter Assignment Title">
-            @*<span asp-validation-for="AssignmentTitle" class="text-danger"></span>*@
+            <span asp-validation-for="AssignmentTitle" class="text-danger"></span>
         </div>
         <div class="form-group">
             <label asp-for="AssignmentDescription" class="form-label mt-4">Assignment Description</label>
             <textarea asp-for="AssignmentDescription" class="form-control" id="exampleTextarea" rows="4"></textarea>
-            @*<span asp-validation-for="AssignmentDescription" class="text-danger"></span>*@
+            <span asp-validation-for="AssignmentDescription" class="text-danger"></span>
 
         </div>
         <div class="form-group">
@@ -37,5 +37,9 @@
         <button type="submit" class="btn btn-primary">Submit</button>
     </fieldset>
 </form>
+<div>
+    <a asp-action="AssignmentIndex">Back to List</a>
+</div>
+
 
 
