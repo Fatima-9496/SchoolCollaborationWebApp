@@ -281,8 +281,7 @@ namespace SchoolApp.Data.Migrations
                     b.Property<int?>("CourseId")
                         .HasColumnType("int");
 
-                    b.Property<string>("Coursename")
-                        .IsRequired()
+                    b.Property<string>("CourseIds")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("Deadline")

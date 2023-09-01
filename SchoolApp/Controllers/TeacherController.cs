@@ -7,6 +7,7 @@ using SchoolApp.Data;
 using SchoolApp.Models;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.Metrics;
 
 namespace SchoolApp.Controllers
 {
@@ -115,10 +116,18 @@ namespace SchoolApp.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(AnnouncementIndex));
         }
-        public async Task<IActionResult> CourseIndex()
+        public async Task<IActionResult> CourseIndex(string searchString)
         {
-            List<Course> courses = await _context.Courses.ToListAsync();
-            return View(courses);
+            //List<Course> courses = await _context.Courses.ToListAsync();
+            var courses = from m in _context.Courses
+                         select m;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                courses = courses.Where(s => s.CourseName!.Contains(searchString));
+            }
+
+            return View(await courses.ToListAsync());
         }
         public IActionResult CreateCourse()
         {
@@ -232,8 +241,19 @@ namespace SchoolApp.Controllers
         }
         public IActionResult CreateAssignment()
         {
-            var courseNames = _context.Courses.Select(course => course.CourseName).ToList();
-            ViewBag.CourseNames = courseNames;
+            //var courseNames = _context.Courses.Select(course => course.CourseName).ToList();
+            //ViewBag.CourseNames = courseNames;
+
+            //var courses = _context.Courses.ToList();
+            //var assignments = _context.Assignments.Include(a => a.Course).ToList();
+
+            //ViewBag.Courses = new SelectList(courses, "CourseId", "CourseName");
+            //ViewBag.Assignments = assignments;
+            //ViewData["CourseNames"] = SelectList(_context.Courses, "CourseId", "CourseName");
+
+            List<Course> courses = _context.Courses.ToList();
+            courses.Insert(0, new Course { CourseId = 0, CourseName = "--Select Country Name--" });
+            ViewBag.message = new SelectList(courses, "CourseId", "CourseName");
             return View();
         }
 
@@ -245,6 +265,8 @@ namespace SchoolApp.Controllers
             {
                 return View(assignment);
             }
+            //var course =  _context.Courses.ToList();
+            //assignment.ListofCourses = course;
             _context.Add(assignment);
             await _context.SaveChangesAsync();
             return RedirectToAction("AssignmentIndex");

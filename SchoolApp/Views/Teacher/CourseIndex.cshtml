@@ -6,6 +6,12 @@
 <p>
     <a asp-action="CreateCourse">Create New Course</a>
 </p>
+<form asp-controller="Teacher" asp-action="CourseIndex" method="get">
+    <p>
+        Title: <input type="text" name="SearchString" />
+        <input type="submit" value="Filter" />
+    </p>
+</form>
 <table class="table">
     <thead>
         <tr>
