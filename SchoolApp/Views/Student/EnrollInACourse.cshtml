@@ -2,13 +2,74 @@
 
 @{
     ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
 }
 
-<h1>Delete</h1>
+<!-- comments area end -->
+<div class="course-area  pt--120 pb--70">
+    <div class="container">
+        <div class="comment-area">
+            <h4 class="comment-title" style="color: red;"><span>Are you sure you want to enroll in this course?</span></h4>
 
-<h3>Are you sure you want to delete this?</h3>
+            <article>
+                <div class="comment-thumb">
+                    <b> @Html.DisplayNameFor(model => model.CourseName)&nbsp;&nbsp;&nbsp;</b>
+                </div>
+                <div class="comment-content">
+                    <h4> @Html.DisplayFor(model => model.CourseName)</h4>
+                </div>
+            </article>
+            <article>
+                <div class="comment-thumb">
+                    <b> @Html.DisplayNameFor(model => model.CourseDescription)&nbsp;&nbsp;&nbsp;</b>
+                </div>
+                <div class="comment-content">
+                    <h4> @Html.DisplayFor(model => model.CourseDescription)</h4>
+                </div>
+            </article>
+            <article>
+                <div class="comment-thumb">
+                    <b> @Html.DisplayNameFor(model => model.StartDate)&nbsp;&nbsp;&nbsp;</b>
+                </div>
+                <div class="comment-content">
+                    @if (Model.StartDate == null)
+                    {
+                        <p>N/A</p>
+                    }
+                    <h4> @Html.DisplayFor(model => model.StartDate)</h4>
+                </div>
+            </article>
+            <article>
+                <div class="comment-thumb">
+                    <b> @Html.DisplayNameFor(model => model.EndDate)&nbsp;&nbsp;&nbsp;</b>
+                </div>
+                <div class="comment-content">
+                    <h4> @if (Model.EndDate == null)
+                        {
+                            <p>N/A</p>
+                        }
+                        @Html.DisplayFor(model => model.EndDate)</h4>
+                </div>
+                <form asp-action="EnrollInACourse">
+                    <input type="hidden" asp-for="CourseId" />
+                    <input type="submit" value="Enroll" class="btn btn-primary btn-round btn-sm" /> |
+                    <a class="btn btn-primary btn-round btn-sm" asp-action="ListOfCourses">Back to List</a>
+                </form>
+            </article>            
+        </div>
+    </div>
+</div>
+
+@*<h1>Enrollment</h1>
+
+<h3>Are you sure you want to enroll in this course?</h3>
 <div>
-    <h4>Movie</h4>
+    @if (DateTime.Now > Model.EndDate)
+        {
+            <p class="text-danger">Course closed</p>
+        }
+        else
+        {
     <hr />
     <dl class="row">
         <dt class="col-sm-2">
@@ -42,4 +103,6 @@
         <input type="submit" value="EnrollInACourse" class="btn btn-danger" /> |
         <a asp-action="ListOfCourses">Back to List</a>
     </form>
+    }
 </div>
+*@

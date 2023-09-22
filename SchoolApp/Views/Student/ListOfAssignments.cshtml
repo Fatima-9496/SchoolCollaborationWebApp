@@ -2,8 +2,67 @@
 
 @{
     ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
 }
 
+<!-- offset search area start -->
+<div class="offset-search">
+    <form asp-controller="Student" asp-action="ListOfAssignments">
+        <input type="text" name="searchString" placeholder="Sarch here...">
+        <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+</div>
+<!-- offset search area end -->
+<!-- body overlay area start -->
+<div class="body_overlay"></div>
+<!-- body overlay area end -->
+<div class="course-area  pt--120 pb--70">
+    <div class="container">
+        <div class="col-md-10 offset-md-1">
+            <div class="section-title-style2 black-title title-tb text-center">
+                @*                <span>Whats new</span>
+                *@                <h2 class="primary-color">List of Assignments</h2>
+            </div>
+        </div>
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-lg-4 col-md-6">
+                    <div class="card mb-5">
+
+                        <div class="card-body  p-25">
+                            <div class="course-meta-title mb-4">
+                                <div class="course-meta-text">
+                                    <h4><p>@item.AssignmentTitle</p></h4>
+                                </div>
+                            </div>
+                            <p>@item.AssignmentDescription</p>
+                            <ul class="course-meta-details list-inline  w-100">
+                                <li>
+                                    <p>Deadline</p>
+                                    <span>@item.Deadline</span>
+                                </li>
+                                <li>
+                                    <p>Document</p>
+                                    <span><a href="~/@item.AssignmentDocFile">View File</a></span>
+                                </li>
+                                <li>
+                                    <p>Course Name</p>
+                                    <span><p>@item.Course.CourseName</p></span>
+                                </li>
+                            </ul>
+                            <br />
+                            <a class="btn btn-primary btn-round btn-sm" asp-action="SubmitAssignment" asp-route-id="@item.AssignmentId"> Submit </a>
+
+                        </div><!-- card-body -->
+                    </div><!-- card -->
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+@*
 <h1>Courses</h1>
 
 <p>
@@ -12,16 +71,19 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.AssignmentTitle)
+                AssignmentTitle
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.AssignmentDescription)
+                AssignmentDescription
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Deadline)
+                Deadline
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CourseId)
+                Assignment Material
+            </th>
+            <th>
+                Course Name
             </th>
             <th></th>
         </tr>
@@ -31,16 +93,22 @@
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.AssignmentTitle)
+                    @item.AssignmentTitle
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.AssignmentDescription)
+                    @item.AssignmentDescription
+                   
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Deadline)
+                    @item.Deadline
+                    
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.CourseId)
+                    <a href="~/@item.AssignmentDocFile">View File</a>
+                </td>
+                <td>
+                    @item.Course.CourseName
+                    
                 </td>
                 <td>
                     
@@ -50,3 +118,4 @@
         }
     </tbody>
 </table>
+*@

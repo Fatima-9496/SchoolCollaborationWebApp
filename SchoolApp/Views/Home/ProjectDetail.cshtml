@@ -1,0 +1,85 @@
+﻿@model IEnumerable<SchoolApp.Models.Project>
+
+@{
+    ViewData["Title"] = "Project Detail";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+
+}
+<div class="offset-search">
+    <form action="#">
+        <input type="text" name="searchString" placeholder="Sarch here...">
+        <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+</div>
+<!-- offset search area end -->
+<!-- body overlay area start -->
+<div class="body_overlay"></div>
+<!-- body overlay area end -->
+<!-- hero area start -->
+<div class="hero-area has-color">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+                <div class="hero-content">
+                    <h3>Admission'20</h3>
+                    <h1 class="mb-5"><span class="primary-color">Build your Successful</span><b class="line-break"></b>Future with Edification</h1>
+                    <p class="text-white-50">Find Your Preferred Courses & Improve Your Skills</p>
+                    <form asp-controller="Home" asp-action="ProjectDetail">
+                        <div class="form-input mt-5">
+                            <input type="text" name="searchString" required placeholder="Enter your keyword...">
+                            <button class="btn btn-primary btn-round" type="submit">Seacrh</button>
+                            <i class="fa fa-search"></i>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="course-area  pt--120 pb--70">
+    <div class="container">
+        <div class="col-md-10 offset-md-1">
+            <div class="section-title-style2 black-title title-tb text-center">                
+                <h2 class="primary-color">Project Detail</h2>
+            </div>
+        </div>
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-lg-4 col-md-6">
+                    <div class="card mb-5">
+                        <div class="course-thumb">
+                            <img src="~/@item.ImageUrl" alt="image">
+                        </div>
+                        <div class="card-body  p-25">
+                            <div class="course-meta-title mb-4">
+                                <div class="course-meta-text">
+                                    <h4><a href="course-details.html">@item.ProjectTitle</a></h4>
+                                </div>
+                            </div>
+                            <p>@item.ProjectDescription</p>
+                            <ul class="course-meta-details list-inline  w-100">
+                                <li>
+                                    <p>Date</p>
+                                    <span>@item.DateCompleted.ToString("yyyy-MM-dd")</span>
+                                </li>
+                                <li>
+                                    <p>Document</p>
+                                    <span><a href="@item.MediaUrl"><i class="fa fa-file" aria-hidden="true"></i></a></span>
+                                </li>
+                            </ul>
+                        </div><!-- card-body -->
+                    </div><!-- card -->
+                </div>
+            }
+        </div>
+    </div>
+</div>@*
+<h1>Announcement Detail</h1>
+@foreach (var item in Model)
+{
+    <h2>@Html.DisplayFor(modelItem => item.ProjectTitle)</h2>
+    <p>@Html.DisplayFor(modelItem => item.ProjectDescription)</p>
+    <img src="item.MediaUrl" alt="User-Provided Image" />
+    <p><small>@Html.DisplayFor(modelItem => item.DateCompleted)</small></p>
+}*@

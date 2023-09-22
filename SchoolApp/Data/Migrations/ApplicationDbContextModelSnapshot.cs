@@ -230,6 +230,29 @@ namespace SchoolApp.Data.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("SchoolApp.Models.AnnounceAndProjView", b =>
+                {
+                    b.Property<int>("AnprId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AnprId"), 1L, 1);
+
+                    b.Property<int?>("AnnouncementId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("ProjectId")
+                        .HasColumnType("int");
+
+                    b.HasKey("AnprId");
+
+                    b.HasIndex("AnnouncementId");
+
+                    b.HasIndex("ProjectId");
+
+                    b.ToTable("AnnounceAndProjViews");
+                });
+
             modelBuilder.Entity("SchoolApp.Models.Announcement", b =>
                 {
                     b.Property<int>("AnnouncementId")
@@ -238,26 +261,34 @@ namespace SchoolApp.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AnnouncementId"), 1L, 1);
 
+                    b.Property<string>("AnnTearcherId")
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<string>("AnnouncementAuthor")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(40)
+                        .HasColumnType("nvarchar(40)");
 
                     b.Property<string>("AnnouncementDescription")
-                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("AnnouncementDocFile")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("AnnouncementPhoto")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("AnnouncementTitle")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("MediaUrl")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<DateTime?>("PostDate")
                         .HasColumnType("datetime2");
 
                     b.HasKey("AnnouncementId");
+
+                    b.HasIndex("AnnTearcherId");
 
                     b.ToTable("Announcements");
                 });
@@ -270,12 +301,22 @@ namespace SchoolApp.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AssignmentId"), 1L, 1);
 
+                    b.Property<string>("ATearcherId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("AppUserId")
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<string>("AssignmentDescription")
-                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("AssignmentDocFile")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("AssignmentMaterial")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("AssignmentTitle")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("CourseId")
@@ -288,6 +329,8 @@ namespace SchoolApp.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.HasKey("AssignmentId");
+
+                    b.HasIndex("AppUserId");
 
                     b.HasIndex("CourseId");
 
@@ -302,6 +345,9 @@ namespace SchoolApp.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("SubmissionId"), 1L, 1);
 
+                    b.Property<string>("AnnouncementDocFile")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int?>("AssignmentId")
                         .HasColumnType("int");
 
@@ -313,9 +359,6 @@ namespace SchoolApp.Data.Migrations
 
                     b.Property<DateTime?>("SubmissionDate")
                         .HasColumnType("datetime2");
-
-                    b.Property<string>("SubmissionFileUrl")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("SubmissionText")
                         .HasColumnType("nvarchar(max)");
@@ -337,9 +380,18 @@ namespace SchoolApp.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CourseId"), 1L, 1);
 
+                    b.Property<string>("CTearcherId")
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<string>("CourseDescription")
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("CourseDocFile")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CourseMaterial")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("CourseName")
                         .HasMaxLength(20)
@@ -352,6 +404,8 @@ namespace SchoolApp.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.HasKey("CourseId");
+
+                    b.HasIndex("CTearcherId");
 
                     b.ToTable("Courses");
                 });
@@ -379,6 +433,60 @@ namespace SchoolApp.Data.Migrations
                     b.ToTable("Enrollments");
                 });
 
+            modelBuilder.Entity("SchoolApp.Models.MNote", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Content")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("StudentId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("StudentId");
+
+                    b.ToTable("MNotes");
+                });
+
+            modelBuilder.Entity("SchoolApp.Models.Note", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Content")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("StudentId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("StudentId");
+
+                    b.ToTable("Notes");
+                });
+
             modelBuilder.Entity("SchoolApp.Models.Project", b =>
                 {
                     b.Property<int>("ProjectId")
@@ -390,7 +498,13 @@ namespace SchoolApp.Data.Migrations
                     b.Property<DateTime>("DateCompleted")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("ImageUrl")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("MediaUrl")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ProjectArea")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -402,7 +516,12 @@ namespace SchoolApp.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("StudentId")
+                        .HasColumnType("nvarchar(450)");
+
                     b.HasKey("ProjectId");
+
+                    b.HasIndex("StudentId");
 
                     b.ToTable("Projects");
                 });
@@ -478,11 +597,42 @@ namespace SchoolApp.Data.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("SchoolApp.Models.AnnounceAndProjView", b =>
+                {
+                    b.HasOne("SchoolApp.Models.Announcement", "Announcement")
+                        .WithMany()
+                        .HasForeignKey("AnnouncementId");
+
+                    b.HasOne("SchoolApp.Models.Project", "Project")
+                        .WithMany()
+                        .HasForeignKey("ProjectId");
+
+                    b.Navigation("Announcement");
+
+                    b.Navigation("Project");
+                });
+
+            modelBuilder.Entity("SchoolApp.Models.Announcement", b =>
+                {
+                    b.HasOne("SchoolApp.Models.AppUser", "AppUser")
+                        .WithMany()
+                        .HasForeignKey("AnnTearcherId");
+
+                    b.Navigation("AppUser");
+                });
+
             modelBuilder.Entity("SchoolApp.Models.Assignment", b =>
                 {
+                    b.HasOne("SchoolApp.Models.AppUser", "AppUser")
+                        .WithMany()
+                        .HasForeignKey("AppUserId");
+
                     b.HasOne("SchoolApp.Models.Course", "Course")
                         .WithMany("Assignments")
-                        .HasForeignKey("CourseId");
+                        .HasForeignKey("CourseId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.Navigation("AppUser");
 
                     b.Navigation("Course");
                 });
@@ -503,11 +653,21 @@ namespace SchoolApp.Data.Migrations
                     b.Navigation("Assignment");
                 });
 
+            modelBuilder.Entity("SchoolApp.Models.Course", b =>
+                {
+                    b.HasOne("SchoolApp.Models.AppUser", "AppUser")
+                        .WithMany()
+                        .HasForeignKey("CTearcherId");
+
+                    b.Navigation("AppUser");
+                });
+
             modelBuilder.Entity("SchoolApp.Models.Enrollment", b =>
                 {
                     b.HasOne("SchoolApp.Models.Course", "Course")
                         .WithMany("Enrollments")
-                        .HasForeignKey("CourseId");
+                        .HasForeignKey("CourseId")
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("SchoolApp.Models.AppUser", "AppUser")
                         .WithMany()
@@ -516,6 +676,33 @@ namespace SchoolApp.Data.Migrations
                     b.Navigation("AppUser");
 
                     b.Navigation("Course");
+                });
+
+            modelBuilder.Entity("SchoolApp.Models.MNote", b =>
+                {
+                    b.HasOne("SchoolApp.Models.AppUser", "AppUser")
+                        .WithMany()
+                        .HasForeignKey("StudentId");
+
+                    b.Navigation("AppUser");
+                });
+
+            modelBuilder.Entity("SchoolApp.Models.Note", b =>
+                {
+                    b.HasOne("SchoolApp.Models.AppUser", "AppUser")
+                        .WithMany()
+                        .HasForeignKey("StudentId");
+
+                    b.Navigation("AppUser");
+                });
+
+            modelBuilder.Entity("SchoolApp.Models.Project", b =>
+                {
+                    b.HasOne("SchoolApp.Models.AppUser", "AppUser")
+                        .WithMany()
+                        .HasForeignKey("StudentId");
+
+                    b.Navigation("AppUser");
                 });
 
             modelBuilder.Entity("SchoolApp.Models.Assignment", b =>

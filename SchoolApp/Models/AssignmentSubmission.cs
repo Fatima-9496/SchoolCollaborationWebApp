@@ -14,7 +14,10 @@ namespace SchoolApp.Models
         public int? AssignmentId { get; set; }
         public DateTime? SubmissionDate { get; set; }
         public string? SubmissionText { get; set; }
-        public string? SubmissionFileUrl { get; set; }
+        public string? AnnouncementDocFile { get; set; }
+        [NotMapped]
+        [Display(Name = "Announcement File")]
+        public IFormFile? AnnouncementFile { get; set; }
         //[Range(1, 100)]
         //public int score { get; set; }
         public Assignment? Assignment { get; set; }

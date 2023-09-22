@@ -115,7 +115,23 @@ namespace SchoolApp.Areas.Identity.Pages.Account
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User logged in.");
-                    return LocalRedirect(returnUrl);
+                    var user = await _signInManager.UserManager.FindByEmailAsync(Input.Email);
+                    var roles = await _signInManager.UserManager.GetRolesAsync(user);
+                    if (roles.Contains("Teacher"))
+                    {
+                        return RedirectToPage("/Teacher/Index"); // Replace with your Admin page URL
+                    }
+                    else if (roles.Contains("Student"))
+                    {
+                        return RedirectToPage("/Student/Index"); // Replace with your User page URL
+                    }
+                    //else
+                    //{
+                    //    return LocalRedirect(returnUrl);
+                    //}
+                    
+
+                    //return LocalRedirect(returnUrl);
                 }
                 if (result.RequiresTwoFactor)
                 {

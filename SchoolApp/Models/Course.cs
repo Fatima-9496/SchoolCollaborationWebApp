@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SchoolApp.Models
 {
@@ -12,6 +13,15 @@ namespace SchoolApp.Models
         public string? CourseDescription { get; set; }
         public DateTime? StartDate { get; set; }
         public DateTime? EndDate { get; set; }
+        public string? CourseMaterial { get; set; }
+        public string? CourseDocFile { get; set; }
+        [NotMapped]
+        [Display(Name = "Announcement File")]
+        public IFormFile? CourseFile { get; set; }
+        [ForeignKey("AppUser")]
+        public String? CTearcherId { get; set; }
+
+        public AppUser? AppUser { get; set; }
 
         public ICollection<Enrollment>? Enrollments { get; set; }
         public ICollection<Assignment>? Assignments { get; set; }

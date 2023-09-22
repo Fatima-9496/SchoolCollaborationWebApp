@@ -8,6 +8,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Views\Shared\Head_Foot.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CloudinaryDotNet" Version="1.22.0" />
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="6.0.16" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.21" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.21" />
@@ -21,7 +26,31 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Repository\" />
     <Folder Include="Views\AccountView\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Views\Shared\Head_Foot.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Views\Shared\Head_Foot.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Views\Shared\Head_Foot.cshtml" />
+    <None Include="wwwroot\template\fonts\fontawesome-webfont.svg" />
+    <None Include="wwwroot\template\fonts\fontawesome-webfont.woff2" />
+    <None Include="wwwroot\template\js\bootstrap.min.js" />
+    <None Include="wwwroot\template\js\google-maps.js" />
+    <None Include="wwwroot\template\js\jquery.magnific-popup.min.js" />
+    <None Include="wwwroot\template\js\jquery.slicknav.min.js" />
+    <None Include="wwwroot\template\js\owl.carousel.min.js" />
+    <None Include="wwwroot\template\js\plugins.js" />
+    <None Include="wwwroot\template\js\scripts.js" />
+    <None Include="wwwroot\template\js\vendor\jquery-2.2.4.min.js" />
+    <None Include="wwwroot\template\js\vendor\modernizr-2.8.3.min.js" />
   </ItemGroup>
 
 </Project>

@@ -1,0 +1,176 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Edification - Responsive Education HTML5 Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="shortcut icon" type="image/png" href="~/template/images/icon/favicon.ico">
+    <!-- all css here -->
+    <link rel="stylesheet" href="~/template/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/template/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/template/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/template/css/magnific-popup.css">
+    <link rel="stylesheet" href="~/template/css/slicknav.min.css">
+    <link rel="stylesheet" href="~/template/css/typography.css">
+    <link rel="stylesheet" href="~/template/css/default-css.css">
+    <link rel="stylesheet" href="~/template/css/styles.css">
+    <link rel="stylesheet" href="~/template/css/responsive.css">
+    <!--color css-->
+    <link rel="stylesheet" id="triggerColor" href="~/template/css/triggerplate/color-0.css">
+    <!-- modernizr css -->
+    <script src="~/template/js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+
+<body>
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <!-- preloader area start -->
+    <div id="preloader">
+        <div class="loader"></div>
+    </div>
+    <!-- prealoader area end -->
+    <!-- header area start -->
+    <header id="header">
+        <!-- header two area start -->
+        <div class="header-three">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-xl-2 col-lg-3 col-md-6">
+                        <div class="logo">
+@*                            <a href="index.html"><img src="~/template/images/icon/logo-black.png" alt="logo"></a>*@
+
+                            <small><a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @User.Identity?.Name!</a></small>
+                              
+                           
+                        </div>
+                    </div>
+                    <div class="col-lg-7 d-none d-lg-block">
+                        <div class="main-menu menu-style2">
+                            <nav>
+                                <ul id="m_menu_active">
+                                    <li class="active">
+                                        <a asp-controller="Student" asp-action="Index">Home</a>
+                                    </li>                                    
+                                    <li><a asp-controller="Student" asp-action="ListOfCourses">Courses</a></li>  
+                                    <li>
+                                        <a asp-controller="Student" asp-action="ProjectIndex" >Projects</a>
+                                    </li>
+                                    <li>
+                                        <a asp-controller="Student" asp-action="ListOfEnrollments">My Courses</a>
+                                    </li>
+                                    <li>
+                                        <a asp-controller="Student" asp-action="ListOfAssignments">Assignments</a>
+                                    </li>
+                                    
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-2 col-md-5">
+                        <div class="hb-s3-right">
+                            <ul>
+                                <li>
+                                    <a asp-controller="Student" asp-action="ListOfNotes">My Notes</a>
+                                </li>
+                                <li>
+                                    <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                                        <button type="submit" class="nav-link btn btn-link text-dark">Logout</button>
+                                    </form>
+                                </li>
+                                <li class="search_btn"><i class="fa fa-search"></i></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 d-block d-lg-none">
+                        <div id="mobile_menu"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- header two area end -->
+    </header>
+    <!-- header area end -->
+    @RenderBody()
+
+    <footer>
+        <div class="footer-top  has-color pt--120 pb--30">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="widget widget-company">
+                            <a href="index.html"><img src="~/template/images/icon/logo.png" alt="image"></a>
+                            <div class="address">
+                                <h6>OFFICE ADDRESS</h6>
+                                <p>London Oxford Street, 012 United Kingdom.</p>
+                            </div>
+                            <div class="address">
+                                <h6>BUSINESS PHONE</h6>
+                                <p>+012 3456 7890</p>
+                            </div>
+                            <div class="address">
+                                <h6>BUSINESS EMAIL</h6>
+                                <p>Business@themerocket.net</p>
+                            </div>
+                            <ul class="social">
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                                <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="widget footer-link">
+                            <h4 class="fwidget-title mb-5 pb-3 primary-color">Footer Menu</h4>
+                            <ul>
+                                <li><a href="#"><i class="fa fa-arrow-right"></i>Case Studies</a></li>
+                                <li><a href="#"><i class="fa fa-arrow-right"></i>About Us</a></li>
+                                <li><a href="#"><i class="fa fa-arrow-right"></i>Our Story</a></li>
+                                <li><a href="#"><i class="fa fa-arrow-right"></i>Blog Post</a></li>
+                                <li><a href="#"><i class="fa fa-arrow-right"></i>Work with Us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="widget widget-opening">
+                            <h4 class="fwidget-title mb-5 pb-3 primary-color">Working Day & time</h4>
+                            <p>Architecto beatae vitae dicta sunt ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit</p>
+                            <ul>
+                                <li><span>Mon - Tus :</span>6.00 am - 10.00 pm</li>
+                                <li><span>Wed - Tur :</span>8.00 am - 6.00 pm</li>
+                                <li><span>Friday :</span>3.00 pm - 8.00 pm</li>
+                                <li><span>Sunday :</span>Closed</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>Copyright &copy; 2018 <span><a target="_blank" href="https://themeforest.net/user/pixelthemez/portfolio" class="primary-color">Edification</a> </span> - All Rights Reserved. Made by <span><a class="primary-color" href="https://furioustheme.com/" target="_blank">Furioustheme</a></span></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jquery latest version -->
+    <script src="~/template/js/vendor/jquery-2.2.4.min.js"></script>
+    <!-- bootstrap 4 js -->
+    <script src="~/template/js/bootstrap.min.js"></script>
+    <!-- others plugins -->
+    <script src="~/template/js/owl.carousel.min.js"></script>
+    <script src="~/template/js/jquery.magnific-popup.min.js"></script>
+    <script src="~/template/js/jquery.slicknav.min.js"></script>
+    <script src="~/template/js/plugins.js"></script>
+    <!-- google map -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBO_5h890WNShs_YLGivCBfs2U89qXR-7Y&callback=initMap"></script>
+    <script src="~/template/js/scripts.js"></script>
+</body>
+
+</html>

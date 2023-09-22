@@ -5,8 +5,316 @@
       "PackagePath": "staticwebassets\\SchoolApp.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Images\\06a09b39-f215-44d3-85e7-edc52a60d694-fatima028612ml.pdf",
+      "PackagePath": "staticwebassets\\Images\\06a09b39-f215-44d3-85e7-edc52a60d694-fatima028612ml.pdf"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Images\\09838dec-5047-4a11-bfbd-e9850482e73e-SPM.pdf",
+      "PackagePath": "staticwebassets\\Images\\09838dec-5047-4a11-bfbd-e9850482e73e-SPM.pdf"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Images\\0b5613ba-d7c8-4b68-951c-5e1734dd471e-Screenshot (101).png",
+      "PackagePath": "staticwebassets\\Images\\0b5613ba-d7c8-4b68-951c-5e1734dd471e-Screenshot (101).png"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Images\\0ec89375-fd35-42fa-a8cb-9dbf4ae9d58d-Rm_assign_II.pdf",
+      "PackagePath": "staticwebassets\\Images\\0ec89375-fd35-42fa-a8cb-9dbf4ae9d58d-Rm_assign_II.pdf"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Images\\0f3a3e6c-a11d-4363-954d-2e7e9d7944b1-Screenshot (101).png",
+      "PackagePath": "staticwebassets\\Images\\0f3a3e6c-a11d-4363-954d-2e7e9d7944b1-Screenshot (101).png"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Images\\0f543f22-37e0-46ab-b87d-d9a1d3c46f5a-SPM.pdf",
+      "PackagePath": "staticwebassets\\Images\\0f543f22-37e0-46ab-b87d-d9a1d3c46f5a-SPM.pdf"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Images\\1e52bfdf-d188-4746-a233-2821e0b2f1ce-researchfinalll.pdf",
+      "PackagePath": "staticwebassets\\Images\\1e52bfdf-d188-4746-a233-2821e0b2f1ce-researchfinalll.pdf"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Images\\272b2cbe-10bf-43bd-80c4-48c170a1396d-Screenshot (102).png",
+      "PackagePath": "staticwebassets\\Images\\272b2cbe-10bf-43bd-80c4-48c170a1396d-Screenshot (102).png"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Images\\293dfccf-0904-4abf-912a-a8211284de07-SPM.pdf",
+      "PackagePath": "staticwebassets\\Images\\293dfccf-0904-4abf-912a-a8211284de07-SPM.pdf"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Images\\2d0a5c64-62e7-432e-bd15-a747b5ad7cd2-researchfinalll.pdf",
+      "PackagePath": "staticwebassets\\Images\\2d0a5c64-62e7-432e-bd15-a747b5ad7cd2-researchfinalll.pdf"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Images\\304ae6b1-b9cc-43d3-88e0-13e45387382e-researchfinalll.pdf",
+      "PackagePath": "staticwebassets\\Images\\304ae6b1-b9cc-43d3-88e0-13e45387382e-researchfinalll.pdf"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Images\\3922a651-9359-4d17-8617-e802086bf3ed-Screenshot (101).png",
+      "PackagePath": "staticwebassets\\Images\\3922a651-9359-4d17-8617-e802086bf3ed-Screenshot (101).png"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Images\\3b4ed85f-eec2-4254-ae20-e1cd8b244823-Rm_assign_II.pdf",
+      "PackagePath": "staticwebassets\\Images\\3b4ed85f-eec2-4254-ae20-e1cd8b244823-Rm_assign_II.pdf"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Images\\3f4e6155-f4d8-4b11-833b-64f983e0b59e-SPM.pdf",
+      "PackagePath": "staticwebassets\\Images\\3f4e6155-f4d8-4b11-833b-64f983e0b59e-SPM.pdf"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Images\\4f6553cf-3937-40d4-a2fb-9f78c8a8514d-SPM.pdf",
+      "PackagePath": "staticwebassets\\Images\\4f6553cf-3937-40d4-a2fb-9f78c8a8514d-SPM.pdf"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Images\\5383d053-9d20-4c33-b019-27aa135a50ca-SPM.pdf",
+      "PackagePath": "staticwebassets\\Images\\5383d053-9d20-4c33-b019-27aa135a50ca-SPM.pdf"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Images\\6834dfb6-72a5-4e10-80ef-95d23cd435fe-researchfinalll.pdf",
+      "PackagePath": "staticwebassets\\Images\\6834dfb6-72a5-4e10-80ef-95d23cd435fe-researchfinalll.pdf"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Images\\6b5cad0e-443c-4a24-812c-62e0b950ad51-Screenshot (101).png",
+      "PackagePath": "staticwebassets\\Images\\6b5cad0e-443c-4a24-812c-62e0b950ad51-Screenshot (101).png"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Images\\6b69946e-8bda-49f4-bd09-8a4dda5ac65b-SPM.pdf",
+      "PackagePath": "staticwebassets\\Images\\6b69946e-8bda-49f4-bd09-8a4dda5ac65b-SPM.pdf"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Images\\6e51ac59-78cf-4b1f-8509-19dd32ee3ccd-samplecharter.doc",
+      "PackagePath": "staticwebassets\\Images\\6e51ac59-78cf-4b1f-8509-19dd32ee3ccd-samplecharter.doc"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Images\\739d0d6f-a725-48f2-9708-4732f1f2aafc-Rm_assign_II.pdf",
+      "PackagePath": "staticwebassets\\Images\\739d0d6f-a725-48f2-9708-4732f1f2aafc-Rm_assign_II.pdf"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Images\\7a3508d7-6d26-415d-bf4d-0a78fa7385a3-Screenshot (101).png",
+      "PackagePath": "staticwebassets\\Images\\7a3508d7-6d26-415d-bf4d-0a78fa7385a3-Screenshot (101).png"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Images\\7cca817f-ef27-4579-b37f-7ba316093b83-Rm_assign_II.pdf",
+      "PackagePath": "staticwebassets\\Images\\7cca817f-ef27-4579-b37f-7ba316093b83-Rm_assign_II.pdf"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Images\\80d18f95-4033-402f-ae05-0caba7d6ed23-SPM.pdf",
+      "PackagePath": "staticwebassets\\Images\\80d18f95-4033-402f-ae05-0caba7d6ed23-SPM.pdf"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Images\\8695e8ab-b39d-4bd2-a6ac-39bf4fc0f7c0-Screenshot (101).png",
+      "PackagePath": "staticwebassets\\Images\\8695e8ab-b39d-4bd2-a6ac-39bf4fc0f7c0-Screenshot (101).png"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Images\\8ab6c14b-2cfb-4f5c-9429-26b7583c9845-SPM.pdf",
+      "PackagePath": "staticwebassets\\Images\\8ab6c14b-2cfb-4f5c-9429-26b7583c9845-SPM.pdf"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Images\\8d4829a9-2bc2-4ba4-97c9-5e66a0c9cf0c-Rm_assign_II.pdf",
+      "PackagePath": "staticwebassets\\Images\\8d4829a9-2bc2-4ba4-97c9-5e66a0c9cf0c-Rm_assign_II.pdf"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Images\\915f1837-a15b-420c-a81d-e7bc51e9f4dd-Screenshot (102).png",
+      "PackagePath": "staticwebassets\\Images\\915f1837-a15b-420c-a81d-e7bc51e9f4dd-Screenshot (102).png"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Images\\9a9ce781-c61d-4d1d-8f2b-526cc584aa1c-SPM.pdf",
+      "PackagePath": "staticwebassets\\Images\\9a9ce781-c61d-4d1d-8f2b-526cc584aa1c-SPM.pdf"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Images\\9c7e0b10-6482-4658-b053-31f1530d7ec0-FatimaAbayneh028612.pdf",
+      "PackagePath": "staticwebassets\\Images\\9c7e0b10-6482-4658-b053-31f1530d7ec0-FatimaAbayneh028612.pdf"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Images\\9e823d81-687f-48de-82cc-ba69f13f53be-researchfinalll.pdf",
+      "PackagePath": "staticwebassets\\Images\\9e823d81-687f-48de-82cc-ba69f13f53be-researchfinalll.pdf"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Images\\a07cb7ca-f3b3-48b9-9ebb-a5ba4a0a85bc-Screenshot (101).png",
+      "PackagePath": "staticwebassets\\Images\\a07cb7ca-f3b3-48b9-9ebb-a5ba4a0a85bc-Screenshot (101).png"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Images\\a3e02360-f150-4cd2-8d32-480d8c7df216-research_final - Copy.pdf",
+      "PackagePath": "staticwebassets\\Images\\a3e02360-f150-4cd2-8d32-480d8c7df216-research_final - Copy.pdf"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Images\\a4ad0592-470f-46b0-a927-abe2b9f599e7-Rm_assign_II.pdf",
+      "PackagePath": "staticwebassets\\Images\\a4ad0592-470f-46b0-a927-abe2b9f599e7-Rm_assign_II.pdf"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Images\\b023c6a1-973d-4302-a476-fc404c099ff9-SPM.pdf",
+      "PackagePath": "staticwebassets\\Images\\b023c6a1-973d-4302-a476-fc404c099ff9-SPM.pdf"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Images\\b02c7b27-8328-4f98-a73f-b081e08f1527-Screenshot (101).png",
+      "PackagePath": "staticwebassets\\Images\\b02c7b27-8328-4f98-a73f-b081e08f1527-Screenshot (101).png"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Images\\b3001361-9c33-463e-9508-72ae1f76e4df-research_final - Copy.pdf",
+      "PackagePath": "staticwebassets\\Images\\b3001361-9c33-463e-9508-72ae1f76e4df-research_final - Copy.pdf"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Images\\b621d0ab-afd8-4be8-a4c8-b8ba11c52354-Screenshot (101).png",
+      "PackagePath": "staticwebassets\\Images\\b621d0ab-afd8-4be8-a4c8-b8ba11c52354-Screenshot (101).png"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Images\\bb517f69-9276-4cb7-8ae2-b12b72e2c000-SPM.pdf",
+      "PackagePath": "staticwebassets\\Images\\bb517f69-9276-4cb7-8ae2-b12b72e2c000-SPM.pdf"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Images\\bc5e2f06-932b-48df-8afc-1869090ae2cd-SPM.pdf",
+      "PackagePath": "staticwebassets\\Images\\bc5e2f06-932b-48df-8afc-1869090ae2cd-SPM.pdf"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Images\\be59a403-64ed-4138-80eb-3e8c864a9901-SPM.pdf",
+      "PackagePath": "staticwebassets\\Images\\be59a403-64ed-4138-80eb-3e8c864a9901-SPM.pdf"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Images\\bea69424-ef82-4599-9587-e64eb74e3a57-FatimaAbayneh028612.pdf",
+      "PackagePath": "staticwebassets\\Images\\bea69424-ef82-4599-9587-e64eb74e3a57-FatimaAbayneh028612.pdf"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Images\\bfba0fca-0f84-4305-81fe-f722d5c8e2f5-researchfinalll.pdf",
+      "PackagePath": "staticwebassets\\Images\\bfba0fca-0f84-4305-81fe-f722d5c8e2f5-researchfinalll.pdf"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Images\\c2acc9ad-3a4f-4116-b4af-8aff3939cbac-Screenshot (101).png",
+      "PackagePath": "staticwebassets\\Images\\c2acc9ad-3a4f-4116-b4af-8aff3939cbac-Screenshot (101).png"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Images\\c4742857-7485-41b0-ba02-01b4cadf0bd7-SPM.pdf",
+      "PackagePath": "staticwebassets\\Images\\c4742857-7485-41b0-ba02-01b4cadf0bd7-SPM.pdf"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Images\\c8b78de8-fd6c-4433-b282-2813acb38a20-Screenshot (102).png",
+      "PackagePath": "staticwebassets\\Images\\c8b78de8-fd6c-4433-b282-2813acb38a20-Screenshot (102).png"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Images\\c972c15d-1955-4edc-8036-9e38973031db-SPM.pdf",
+      "PackagePath": "staticwebassets\\Images\\c972c15d-1955-4edc-8036-9e38973031db-SPM.pdf"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Images\\ce924648-68a2-4c64-ad42-c72e1ea921ff-SPM.pdf",
+      "PackagePath": "staticwebassets\\Images\\ce924648-68a2-4c64-ad42-c72e1ea921ff-SPM.pdf"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Images\\d0a6c6f3-3364-4d6c-a685-95b175dedac3-Rm_assign_II.pdf",
+      "PackagePath": "staticwebassets\\Images\\d0a6c6f3-3364-4d6c-a685-95b175dedac3-Rm_assign_II.pdf"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Images\\d3bae015-95f1-4c6d-bb07-1abaa4d73274-research_final.pdf",
+      "PackagePath": "staticwebassets\\Images\\d3bae015-95f1-4c6d-bb07-1abaa4d73274-research_final.pdf"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Images\\d47b4118-1504-48d6-9901-867b7c8e0c01-Screenshot (102).png",
+      "PackagePath": "staticwebassets\\Images\\d47b4118-1504-48d6-9901-867b7c8e0c01-Screenshot (102).png"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Images\\d6ac4577-dfdc-4fe5-a342-50e33012c755-Screenshot (102).png",
+      "PackagePath": "staticwebassets\\Images\\d6ac4577-dfdc-4fe5-a342-50e33012c755-Screenshot (102).png"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Images\\d7afc752-c979-49aa-8f8d-b4d40dccf8f7-Elegant and Professional Company Business Proposal Presentation (1).pdf",
+      "PackagePath": "staticwebassets\\Images\\d7afc752-c979-49aa-8f8d-b4d40dccf8f7-Elegant and Professional Company Business Proposal Presentation (1).pdf"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Images\\d7e715b7-2669-4ac3-be50-2bd0914b6e3b-research_final - Copy.pdf",
+      "PackagePath": "staticwebassets\\Images\\d7e715b7-2669-4ac3-be50-2bd0914b6e3b-research_final - Copy.pdf"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Images\\d88f5e85-fd10-458e-912f-138ccb9bfe8b-SPM.pdf",
+      "PackagePath": "staticwebassets\\Images\\d88f5e85-fd10-458e-912f-138ccb9bfe8b-SPM.pdf"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Images\\d99cf4de-24ef-4904-8712-bb8170b095c3-research_final.pdf",
+      "PackagePath": "staticwebassets\\Images\\d99cf4de-24ef-4904-8712-bb8170b095c3-research_final.pdf"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Images\\da75add6-8977-4ff4-bff1-38bce20720e2-SPM.pdf",
+      "PackagePath": "staticwebassets\\Images\\da75add6-8977-4ff4-bff1-38bce20720e2-SPM.pdf"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Images\\dbe60c0d-96f9-48a3-a749-c79533eb281f-samplecharter.doc",
+      "PackagePath": "staticwebassets\\Images\\dbe60c0d-96f9-48a3-a749-c79533eb281f-samplecharter.doc"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Images\\e44d0650-5939-49d3-a37b-7c4336781044-Write your topic.png",
+      "PackagePath": "staticwebassets\\Images\\e44d0650-5939-49d3-a37b-7c4336781044-Write your topic.png"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Images\\e52aa1a6-0fc6-449a-9154-9c2a366bf889-SPM.pdf",
+      "PackagePath": "staticwebassets\\Images\\e52aa1a6-0fc6-449a-9154-9c2a366bf889-SPM.pdf"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Images\\e7e695a8-5d21-4d9d-9b95-77a2cdbe129b-Screenshot (102).png",
+      "PackagePath": "staticwebassets\\Images\\e7e695a8-5d21-4d9d-9b95-77a2cdbe129b-Screenshot (102).png"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Images\\e89ad7aa-f728-43df-96db-3f2c8ff2ac95-SPM.pdf",
+      "PackagePath": "staticwebassets\\Images\\e89ad7aa-f728-43df-96db-3f2c8ff2ac95-SPM.pdf"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Images\\eb9e6eeb-3ae3-45c4-9e46-07be73f45499-researchfinalll.pdf",
+      "PackagePath": "staticwebassets\\Images\\eb9e6eeb-3ae3-45c4-9e46-07be73f45499-researchfinalll.pdf"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Images\\eda6874a-41f7-4ce7-b967-bd6ac1c29680-samplecharter.doc",
+      "PackagePath": "staticwebassets\\Images\\eda6874a-41f7-4ce7-b967-bd6ac1c29680-samplecharter.doc"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Images\\ef446fb3-82c4-4c02-95fd-a01e0a81d96f-Rm_assign_II.pdf",
+      "PackagePath": "staticwebassets\\Images\\ef446fb3-82c4-4c02-95fd-a01e0a81d96f-Rm_assign_II.pdf"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Images\\f4274b2a-1bb3-43ce-9857-fad5b6ce3439-Rm_assign_II.pdf",
+      "PackagePath": "staticwebassets\\Images\\f4274b2a-1bb3-43ce-9857-fad5b6ce3439-Rm_assign_II.pdf"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Images\\f56d2ee4-d892-4e75-bea3-bf09de845dec-Screenshot (102).png",
+      "PackagePath": "staticwebassets\\Images\\f56d2ee4-d892-4e75-bea3-bf09de845dec-Screenshot (102).png"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Images\\f7b5bbd7-6ec3-4d97-989e-2275604a5620-Screenshot (101).png",
+      "PackagePath": "staticwebassets\\Images\\f7b5bbd7-6ec3-4d97-989e-2275604a5620-Screenshot (101).png"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Images\\fa6ab74e-ae2e-4ca5-899a-86300c05a478-researchfinall.pdf",
+      "PackagePath": "staticwebassets\\Images\\fa6ab74e-ae2e-4ca5-899a-86300c05a478-researchfinall.pdf"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Images\\fa89f084-dab9-4f25-b776-e49df526b2a8-Rm_assign_II.pdf",
+      "PackagePath": "staticwebassets\\Images\\fa89f084-dab9-4f25-b776-e49df526b2a8-Rm_assign_II.pdf"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Images\\fb791d16-fdd8-4e60-9939-5cc27dc756ce-Screenshot (101).png",
+      "PackagePath": "staticwebassets\\Images\\fb791d16-fdd8-4e60-9939-5cc27dc756ce-Screenshot (101).png"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Images\\fd6730a7-94c8-4244-832d-a749c082a8f3-SPM.pdf",
+      "PackagePath": "staticwebassets\\Images\\fd6730a7-94c8-4244-832d-a749c082a8f3-SPM.pdf"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Images\\school2.jpg",
+      "PackagePath": "staticwebassets\\Images\\school2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Images\\school3.jpg",
+      "PackagePath": "staticwebassets\\Images\\school3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Images\\school4.jpg",
+      "PackagePath": "staticwebassets\\Images\\school4.jpg"
+    },
+    {
       "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\css\\MyCssTheme.css",
       "PackagePath": "staticwebassets\\css\\MyCssTheme.css"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\css\\StyleSheet.css",
+      "PackagePath": "staticwebassets\\css\\StyleSheet.css"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\css\\bannerStyle.css",
+      "PackagePath": "staticwebassets\\css\\bannerStyle.css"
     },
     {
       "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\css\\site.css",
@@ -15,6 +323,14 @@
     {
       "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\js\\JavaScript.js",
+      "PackagePath": "staticwebassets\\js\\JavaScript.js"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\js\\bannerScript.js",
+      "PackagePath": "staticwebassets\\js\\bannerScript.js"
     },
     {
       "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\js\\site.js",
@@ -247,6 +563,374 @@
     {
       "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\template\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\css\\default-css.css",
+      "PackagePath": "staticwebassets\\template\\css\\default-css.css"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\css\\font-awesome.min.css",
+      "PackagePath": "staticwebassets\\template\\css\\font-awesome.min.css"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\css\\magnific-popup.css",
+      "PackagePath": "staticwebassets\\template\\css\\magnific-popup.css"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\css\\owl.carousel.min.css",
+      "PackagePath": "staticwebassets\\template\\css\\owl.carousel.min.css"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\css\\responsive.css",
+      "PackagePath": "staticwebassets\\template\\css\\responsive.css"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\css\\slicknav.min.css",
+      "PackagePath": "staticwebassets\\template\\css\\slicknav.min.css"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\css\\styles.css",
+      "PackagePath": "staticwebassets\\template\\css\\styles.css"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\css\\typography.css",
+      "PackagePath": "staticwebassets\\template\\css\\typography.css"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\fonts\\FontAwesome.otf",
+      "PackagePath": "staticwebassets\\template\\fonts\\FontAwesome.otf"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\fonts\\fontawesome-webfont.eot",
+      "PackagePath": "staticwebassets\\template\\fonts\\fontawesome-webfont.eot"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\fonts\\fontawesome-webfont.svg",
+      "PackagePath": "staticwebassets\\template\\fonts\\fontawesome-webfont.svg"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\fonts\\fontawesome-webfont.ttf",
+      "PackagePath": "staticwebassets\\template\\fonts\\fontawesome-webfont.ttf"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\fonts\\fontawesome-webfont.woff",
+      "PackagePath": "staticwebassets\\template\\fonts\\fontawesome-webfont.woff"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\fonts\\fontawesome-webfont.woff2",
+      "PackagePath": "staticwebassets\\template\\fonts\\fontawesome-webfont.woff2"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\images\\404.png",
+      "PackagePath": "staticwebassets\\template\\images\\404.png"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\images\\about\\abt-right-thumb.jpg",
+      "PackagePath": "staticwebassets\\template\\images\\about\\abt-right-thumb.jpg"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\images\\angle-left.png",
+      "PackagePath": "staticwebassets\\template\\images\\angle-left.png"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\images\\angle-right.png",
+      "PackagePath": "staticwebassets\\template\\images\\angle-right.png"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\images\\author\\auth1.jpg",
+      "PackagePath": "staticwebassets\\template\\images\\author\\auth1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\images\\author\\blog-post-auth1.jpg",
+      "PackagePath": "staticwebassets\\template\\images\\author\\blog-post-auth1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\images\\author\\blog-post-auth2.jpg",
+      "PackagePath": "staticwebassets\\template\\images\\author\\blog-post-auth2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\images\\author\\blog-post-auth3.jpg",
+      "PackagePath": "staticwebassets\\template\\images\\author\\blog-post-auth3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\images\\author\\cs-comment-auth1.jpg",
+      "PackagePath": "staticwebassets\\template\\images\\author\\cs-comment-auth1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\images\\author\\cs-comment-auth2.jpg",
+      "PackagePath": "staticwebassets\\template\\images\\author\\cs-comment-auth2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\images\\author\\cs-comment-auth3.jpg",
+      "PackagePath": "staticwebassets\\template\\images\\author\\cs-comment-auth3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\images\\author\\cs-post-author1.jpg",
+      "PackagePath": "staticwebassets\\template\\images\\author\\cs-post-author1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\images\\bg\\abt2-bg.jpg",
+      "PackagePath": "staticwebassets\\template\\images\\bg\\abt2-bg.jpg"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\images\\bg\\bg1.jpg",
+      "PackagePath": "staticwebassets\\template\\images\\bg\\bg1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\images\\bg\\crumb-bg.jpg",
+      "PackagePath": "staticwebassets\\template\\images\\bg\\crumb-bg.jpg"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\images\\bg\\cta-bg-bottom.jpg",
+      "PackagePath": "staticwebassets\\template\\images\\bg\\cta-bg-bottom.jpg"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\images\\bg\\flwr-bg.jpg",
+      "PackagePath": "staticwebassets\\template\\images\\bg\\flwr-bg.jpg"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\images\\bg\\hero-bg.jpg",
+      "PackagePath": "staticwebassets\\template\\images\\bg\\hero-bg.jpg"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\images\\bg\\hero-bg2.jpg",
+      "PackagePath": "staticwebassets\\template\\images\\bg\\hero-bg2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\images\\bg\\slider-bg1.jpg",
+      "PackagePath": "staticwebassets\\template\\images\\bg\\slider-bg1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\images\\bg\\slider-bg2.jpg",
+      "PackagePath": "staticwebassets\\template\\images\\bg\\slider-bg2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\images\\bg\\slider-bg3.jpg",
+      "PackagePath": "staticwebassets\\template\\images\\bg\\slider-bg3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\images\\bg\\slider.jpg",
+      "PackagePath": "staticwebassets\\template\\images\\bg\\slider.jpg"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\images\\bg\\take-toure-bg.jpg",
+      "PackagePath": "staticwebassets\\template\\images\\bg\\take-toure-bg.jpg"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\images\\bg\\tst-bg-shape.png",
+      "PackagePath": "staticwebassets\\template\\images\\bg\\tst-bg-shape.png"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\images\\blog\\blog-details.jpg",
+      "PackagePath": "staticwebassets\\template\\images\\blog\\blog-details.jpg"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\images\\blog\\blog-thumbnail1.jpg",
+      "PackagePath": "staticwebassets\\template\\images\\blog\\blog-thumbnail1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\images\\blog\\blog-thumbnail2.jpg",
+      "PackagePath": "staticwebassets\\template\\images\\blog\\blog-thumbnail2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\images\\blog\\blog-thumbnail3.jpg",
+      "PackagePath": "staticwebassets\\template\\images\\blog\\blog-thumbnail3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\images\\blog\\blog-thumbnail4.jpg",
+      "PackagePath": "staticwebassets\\template\\images\\blog\\blog-thumbnail4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\images\\blog\\blog-thumbnail5.jpg",
+      "PackagePath": "staticwebassets\\template\\images\\blog\\blog-thumbnail5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\images\\blog\\blog-thumbnail6.jpg",
+      "PackagePath": "staticwebassets\\template\\images\\blog\\blog-thumbnail6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\images\\course\\course-details.jpg",
+      "PackagePath": "staticwebassets\\template\\images\\course\\course-details.jpg"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\images\\course\\cs-img1.jpg",
+      "PackagePath": "staticwebassets\\template\\images\\course\\cs-img1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\images\\course\\cs-img2.jpg",
+      "PackagePath": "staticwebassets\\template\\images\\course\\cs-img2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\images\\course\\cs-img3.jpg",
+      "PackagePath": "staticwebassets\\template\\images\\course\\cs-img3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\images\\course\\cs-img4.jpg",
+      "PackagePath": "staticwebassets\\template\\images\\course\\cs-img4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\images\\course\\cs-img5.jpg",
+      "PackagePath": "staticwebassets\\template\\images\\course\\cs-img5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\images\\course\\cs-img6.jpg",
+      "PackagePath": "staticwebassets\\template\\images\\course\\cs-img6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\images\\course\\cs-small-thumb1.jpg",
+      "PackagePath": "staticwebassets\\template\\images\\course\\cs-small-thumb1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\images\\course\\cs-small-thumb2.jpg",
+      "PackagePath": "staticwebassets\\template\\images\\course\\cs-small-thumb2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\images\\course\\cs-small-thumb3.jpg",
+      "PackagePath": "staticwebassets\\template\\images\\course\\cs-small-thumb3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\images\\course\\cs-small-thumb4.jpg",
+      "PackagePath": "staticwebassets\\template\\images\\course\\cs-small-thumb4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\images\\course\\cs-small-thumb5.jpg",
+      "PackagePath": "staticwebassets\\template\\images\\course\\cs-small-thumb5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\images\\feature-archive\\ftvc-icon1.png",
+      "PackagePath": "staticwebassets\\template\\images\\feature-archive\\ftvc-icon1.png"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\images\\feature-archive\\ftvc-icon2.png",
+      "PackagePath": "staticwebassets\\template\\images\\feature-archive\\ftvc-icon2.png"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\images\\feature-archive\\ftvc-icon3.png",
+      "PackagePath": "staticwebassets\\template\\images\\feature-archive\\ftvc-icon3.png"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\images\\feature-archive\\ftvc-icon4.png",
+      "PackagePath": "staticwebassets\\template\\images\\feature-archive\\ftvc-icon4.png"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\images\\feature-archive\\ftvc-img1.png",
+      "PackagePath": "staticwebassets\\template\\images\\feature-archive\\ftvc-img1.png"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\images\\feature-archive\\ftvc-img2.png",
+      "PackagePath": "staticwebassets\\template\\images\\feature-archive\\ftvc-img2.png"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\images\\feature-archive\\ftvc-img3.png",
+      "PackagePath": "staticwebassets\\template\\images\\feature-archive\\ftvc-img3.png"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\images\\feature-archive\\ftvc-img4.png",
+      "PackagePath": "staticwebassets\\template\\images\\feature-archive\\ftvc-img4.png"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\images\\icon\\abt-titleshape.png",
+      "PackagePath": "staticwebassets\\template\\images\\icon\\abt-titleshape.png"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\images\\icon\\cross-cursor.png",
+      "PackagePath": "staticwebassets\\template\\images\\icon\\cross-cursor.png"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\images\\icon\\hb-bottom-shape.png",
+      "PackagePath": "staticwebassets\\template\\images\\icon\\hb-bottom-shape.png"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\images\\icon\\logo-black.png",
+      "PackagePath": "staticwebassets\\template\\images\\icon\\logo-black.png"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\images\\icon\\logo-middle.png",
+      "PackagePath": "staticwebassets\\template\\images\\icon\\logo-middle.png"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\images\\icon\\logo.png",
+      "PackagePath": "staticwebassets\\template\\images\\icon\\logo.png"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\images\\icon\\title-top-shape.png",
+      "PackagePath": "staticwebassets\\template\\images\\icon\\title-top-shape.png"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\images\\map.png",
+      "PackagePath": "staticwebassets\\template\\images\\map.png"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\images\\sidebar\\banner-img.jpg",
+      "PackagePath": "staticwebassets\\template\\images\\sidebar\\banner-img.jpg"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\images\\teacher\\tch-left-thumb.jpg",
+      "PackagePath": "staticwebassets\\template\\images\\teacher\\tch-left-thumb.jpg"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\images\\teacher\\teacher-member1.jpg",
+      "PackagePath": "staticwebassets\\template\\images\\teacher\\teacher-member1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\images\\teacher\\teacher-member2.jpg",
+      "PackagePath": "staticwebassets\\template\\images\\teacher\\teacher-member2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\images\\teacher\\teacher-member3.jpg",
+      "PackagePath": "staticwebassets\\template\\images\\teacher\\teacher-member3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\images\\teacher\\teacher-member4.jpg",
+      "PackagePath": "staticwebassets\\template\\images\\teacher\\teacher-member4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\images\\teacher\\teacher-member5.jpg",
+      "PackagePath": "staticwebassets\\template\\images\\teacher\\teacher-member5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\images\\teacher\\teacher-member6.jpg",
+      "PackagePath": "staticwebassets\\template\\images\\teacher\\teacher-member6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\template\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\js\\google-maps.js",
+      "PackagePath": "staticwebassets\\template\\js\\google-maps.js"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\js\\jquery.magnific-popup.min.js",
+      "PackagePath": "staticwebassets\\template\\js\\jquery.magnific-popup.min.js"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\js\\jquery.slicknav.min.js",
+      "PackagePath": "staticwebassets\\template\\js\\jquery.slicknav.min.js"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\js\\owl.carousel.min.js",
+      "PackagePath": "staticwebassets\\template\\js\\owl.carousel.min.js"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\js\\plugins.js",
+      "PackagePath": "staticwebassets\\template\\js\\plugins.js"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\js\\scripts.js",
+      "PackagePath": "staticwebassets\\template\\js\\scripts.js"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\js\\vendor\\jquery-2.2.4.min.js",
+      "PackagePath": "staticwebassets\\template\\js\\vendor\\jquery-2.2.4.min.js"
+    },
+    {
+      "Id": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\template\\js\\vendor\\modernizr-2.8.3.min.js",
+      "PackagePath": "staticwebassets\\template\\js\\vendor\\modernizr-2.8.3.min.js"
     },
     {
       "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.SchoolApp.Microsoft.AspNetCore.StaticWebAssets.props",

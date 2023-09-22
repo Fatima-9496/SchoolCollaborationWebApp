@@ -1,26 +1,49 @@
-﻿@model List<SchoolApp.Models.Enrollment> 
+﻿@model IEnumerable<SchoolApp.Models.Enrollment>
 
 @{
     ViewData["Title"] = "Enrollments with Details";
+    Layout = "~/Views/Shared/_TeacherLayout.cshtml";
 }
+<div class="offset-search">
+    <form asp-controller="Teacher" asp-action="ListOfEnrollements">
+        <input type="text" name="searchString" placeholder="Sarch here...">
+        <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+</div>
+<!-- offset search area end -->
+<!-- body overlay area start -->
+<div class="body_overlay"></div>
+<!-- body overlay area end -->
+<div class="course-area  pt--120 pb--70">
+    <div class="container">
+        <h1>List of enrolled students</h1>
 
-<h1>List of enrolled students</h1>
-
-<table class="table">
-    <thead>
-        <tr>            
-            <th>Course Name</th>
-            <th>Student Name</th>
-            <th>Student Name</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var enrollment in Model)
-        {
-            <tr>                
-                <td>@(enrollment.Course != null ? enrollment.Course.CourseName : "N/A")</td>
-                <td>@(enrollment.AppUser != null ? enrollment.AppUser.UserName : "N/A")</td>
-            </tr>
-        }
-    </tbody>
-</table>
+        <table class="table">
+            <thead>
+                <tr>            
+                    <th>Course Name</th>
+                    <th>Student Name</th>
+            
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var course in Model)
+                {
+                    <tr>
+                        <td>@course.Course.CourseName</td>
+                        <td>@course.AppUser.UserName</td>
+                    </tr>
+                    @*@foreach (var er in course.Enrollments)
+                    {
+                        <tr>
+                            <td>@course.CourseName</td>
+                            <td>@er.AppUser.UserName</td>
+                        </tr>
+                
+                    }*@
+                    @*<li>@er.AppUser.UserName</li>*@
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,101 @@
+﻿@model IEnumerable<SchoolApp.Models.Enrollment>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<!-- offset search area start -->
+<div class="offset-search">
+    <form asp-controller="Student" asp-action="ListOfEnrollments">
+        <input type="text" name="searchString" placeholder="Sarch here...">
+        <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+</div>
+<!-- offset search area end -->
+<!-- body overlay area start -->
+<div class="body_overlay"></div>
+<!-- body overlay area end -->
+<div class="course-area  pt--120 pb--70">
+    <div class="container">
+        <div class="col-md-10 offset-md-1">
+            <div class="section-title-style2 black-title title-tb text-center">
+                @*                <span>Whats new</span>
+                *@                <h2 class="primary-color">My Courses</h2>
+            </div>
+        </div>
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-lg-4 col-md-6">
+                    <div class="card mb-5">
+
+                        <div class="card-body  p-25">
+                            <div class="course-meta-title mb-4">
+                                <div class="course-meta-text">
+                                    <h4><a href="course-details.html">@item.Course.CourseName</a></h4>
+                                </div>
+                            </div>
+                            <p>@item.Course.CourseDescription</p>
+                            <ul class="course-meta-details list-inline  w-100">
+                                <li>
+                                    <p>Start Date</p>
+                                    <span>@item.Course.StartDate</span>
+                                </li>
+                                <li>
+                                    <p>End Date</p>
+                                    <span>@item.Course.EndDate</span>
+                                </li>
+                                <li>
+                                    <p>Document</p>
+                                    <span><a href="@item.Course.CourseDocFile"><i class="fa fa-file" aria-hidden="true"></i></a></span>
+                                </li>
+                            </ul>
+                            <br />
+                            <a class="btn btn-primary btn-round btn-sm" asp-action="EnrollmentDelete" asp-route-id="@item.EnrollmentId"> Delete </a>
+
+
+                        </div><!-- card-body -->
+                    </div><!-- card -->
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+@*<h1>enroll</h1>
+
+<p>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CourseId)
+            </th>
+            
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AppUser.UserName)
+                </td>
+                <td>
+                    @item.Course.CourseName
+                </td>
+                
+                <td>
+
+                    <a asp-action="EnrollmentDelete" asp-route-id="@item.EnrollmentId">Delete</a> |
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>*@

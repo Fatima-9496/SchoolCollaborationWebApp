@@ -1,0 +1,494 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_TeacherLayout.cshtml";
+}
+
+
+
+<!-- offset search area start -->
+<div class="offset-search">
+    <form action="#">
+        <input type="text" name="search" placeholder="Sarch here...">
+        <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+</div>
+<!-- offset search area end -->
+<!-- body overlay area start -->
+<div class="body_overlay"></div>
+<!-- body overlay area end -->
+<!-- hero area start -->
+<div class="hero-area has-color">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+                <div class="hero-content">
+                    <h3>Admission'20</h3>
+                    <h1 class="mb-5"><span class="primary-color">Build your Successful</span><b class="line-break"></b>Future with Edification</h1>
+                    <p class="text-white-50">Find Your Preferred Courses & Improve Your Skills</p>
+                    <form action="#">
+                        <div class="form-input mt-5">
+                            <input type="text" name="search" required placeholder="Enter your keyword...">
+                            <button class="btn btn-primary btn-round" type="submit">Seacrh</button>
+                            <i class="fa fa-search"></i>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- hero area end -->
+<!-- about area start -->
+@*<div class="about-area-style2 ptb--120">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+                <div class="about-content-style2 text-center has-color">
+                    <div class="section-title-style mb-4">
+                        <h2>Welcome to <b class="line-break"></b><span class="text-color">Edification</span> University</h2>
+                    </div>
+                    <p class="text-white-70">Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+                    <a class="btn btn-light btn-round mt-3" href="#">Read more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> *@
+<!-- about area end -->
+<!-- course area start -->
+<div class="course-area ptb--120" id="Announcement">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 offset-md-1">
+                <div class="section-title-style2 black-title title-tb text-center">
+                    <span>Whats new</span>
+                    <h2 class="primary-color">Recent Announcements</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="commn-carousel owl-carousel card-deck">
+            @foreach (var item in ViewBag.MostRecentItem)
+            {
+                <div class="card mb-5">
+                    <div class="course-thumb">
+                        <img src="@item.AnnouncementPhoto" alt="image">
+                        @*<span class="cs-price primary-bg">$150</span>*@
+                    </div>
+                    <div class="card-body  p-25">
+                        <div class="course-meta-title mb-4">
+                            <div class="course-meta-text">
+                                <h4><a href="course-details.html">@item.AnnouncementTitle</a></h4>
+                            </div>
+                        </div>
+                        <p>@item.AnnouncementDescription</p>
+                        <ul class="course-meta-details list-inline  w-100">
+                            <li>
+                                <p>Date</p>
+                                <span>@item.PostDate.ToString("yyyy-MM-dd")</span>
+                            </li>
+                            <li>
+                                <p>Author</p>
+                                <span>@item.AnnouncementAuthor</span>
+                            </li>
+                            <li>
+                                <p>Document</p>
+                                <span><a href="@item.AnnouncementDocFile"><i class="fa fa-file" aria-hidden="true"></i></a></span>
+                            </li>
+                        </ul>
+                        <br />
+                        <a class="btn btn-primary btn-round btn-sm" asp-controller="Home" asp-action="AnnouncementDetail"> Get More </a>
+
+                    </div><!-- card-body -->
+                </div>
+
+                <!-- card -->
+            }
+            @*<div class="card mb-5">
+            <div class="course-thumb">
+            <img src="@ViewBag.MostRecentItem[1].AnnouncementPhoto" alt="image">
+
+            </div>
+            <div class="card-body  p-25">
+            <div class="course-meta-title mb-4">
+            <div class="course-meta-text">
+            <h4><a href="course-details.html">@ViewBag.MostRecentItem[1].AnnouncementTitle</a></h4>
+
+            </div>
+            </div>
+            <p>@ViewBag.MostRecentItem[1].AnnouncementDescription</p>
+            <ul class="course-meta-details list-inline  w-100">
+            <li>
+            <p>Date</p>
+            <span>@ViewBag.MostRecentItem[1].PostDate.ToString("yyyy-MM-dd")</span>
+            </li>
+            <li>
+            <p>Author</p>
+            <span>@ViewBag.MostRecentItem[0].AnnouncementAuthor</span>
+            </li>
+            <li>
+            <p>Document</p>
+            <span><a href="@ViewBag.MostRecentItem[1].AnnouncementDocFile"><i class="fa fa-file" aria-hidden="true"></i></a></span>
+            </li>
+            </ul>
+            <br />
+            <a class="btn btn-primary btn-round btn-sm" asp-controller="Home" asp-action="AnnouncementDetail"> Get More </a>
+            </div><!-- card-body -->
+            </div><!-- card -->
+
+            <div class="card mb-5">
+            <div class="course-thumb">
+            <img src="@ViewBag.MostRecentItem[2].AnnouncementPhoto" alt="image">
+
+            </div>
+            <div class="card-body  p-25">
+            <div class="course-meta-title mb-4">
+            <div class="course-meta-text">
+            <h4><a href="course-details.html">@ViewBag.MostRecentItem[2].AnnouncementTitle</a></h4>
+
+            </div>
+            </div>
+            <p>@ViewBag.MostRecentItem[2].AnnouncementDescription</p>
+            <ul class="course-meta-details list-inline  w-100">
+            <li>
+            <p>Date</p>
+            <span>@ViewBag.MostRecentItem[2].PostDate.ToString("yyyy-MM-dd")</span>
+            </li>
+            <li>
+            <p>Author</p>
+            <span>@ViewBag.MostRecentItem[0].AnnouncementAuthor</span>
+            </li>
+            <li>
+            <p>Document</p>
+            <span><a href="@ViewBag.MostRecentItem[2].AnnouncementDocFile"><i class="fa fa-file" aria-hidden="true"></i></a></span>
+            </li>
+            </ul>
+            <br />
+            <a class="btn btn-primary btn-round btn-sm" asp-controller="Home" asp-action="AnnouncementDetail"> Get More </a>
+            </div><!-- card-body -->
+            </div><!-- card -->*@
+        </div>
+    </div>
+</div>
+<!-- course area end -->
+<!-- take toure area start -->
+<div class="take-toure-area ptb--120">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 offset-md-1">
+                <div class="section-title-style2 white-title text-center">
+                    <span>Take A Look</span>
+                    <h2>Video Tour on Edification </h2>
+                </div>
+            </div>
+        </div>
+        <div class="video-area">
+            <a class="expand-video" href="https://www.youtube.com/watch?v=cdfMgotGKIM"><i class="fa fa-play"></i></a>
+        </div>
+    </div>
+</div>
+<!-- take toure area end -->
+<!-- course area start -->
+<div class="teacher-area pb--120" id="Project">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 offset-md-1">
+                <div class="section-title-style2 black-title title-tb text-center">
+                    <span>Top Projects </span>
+                    <h2 class="primary-color">Done By Our Students</h2>
+                </div>
+            </div>
+        </div>
+        <div class="commn-carousel owl-carousel card-deck">
+            @foreach (var item in @ViewBag.MostRecentProject)
+            {
+                <div class="card mb-5">
+                    <img src="~/@item.ImageUrl" alt="image">
+                    <div class="card-body teacher-content p-25">
+                        <h4 class="card-title mb-4"><a href="teacher-details.html">@item.ProjectTitle</a></h4>
+                        <span class="primary-color d-block mb-4">@item.ProjectArea</span>
+                        <p class="card-text">@item.ProjectDescription</p>
+                        <ul class="course-meta-details list-inline w-100">
+                            <li>
+                                <p>Date</p>
+                                <span>@item.DateCompleted.ToString("yyyy-MM-dd")</span>
+                            </li>
+                            <li>
+                                <p>Document</p>
+                                <span><a href="@item.MediaUrl"><i class="fa fa-file" aria-hidden="true"></i></a></span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- card -->
+            }
+
+            @*<div class="card mb-5">
+            <img src="~/@ViewBag.MostRecentProject[1].ImageUrl" alt="image">
+            <div class="card-body teacher-content p-25">
+            <h4 class="card-title mb-4"><a href="teacher-details.html">Cameron Brown</a></h4>
+            <span class="primary-color  d-block mb-4">Financier</span>
+            <p class="card-text">We’re a philosophical bunch here at School site and we have thought long and hard about.</p>
+            <ul class="list-inline ">
+            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+
+            </ul>
+            </div>
+            </div>*@<!-- card -->
+            @*<div class="card mb-5">
+            <img src="~/template/images/teacher/teacher-member3.jpg" alt="image">
+            <div class="card-body teacher-content p-25">
+            <h4 class="card-title mb-4"><a href="teacher-details.html">Joseph Mack Monika</a></h4>
+            <span class="primary-color d-block mb-4">Languages</span>
+            <p class="card-text">We’re a philosophical bunch here at School site and we have thought long and hard about.</p>
+            <ul class="list-inline ">
+            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+
+            </ul>
+            </div>
+            </div>*@<!-- card -->
+            @*<div class="card mb-5">
+            <img src="~/@ViewBag.MostRecentProject[2].ImageUrl" alt="image">
+            <div class="card-body teacher-content p-25">
+            <h4 class="card-title mb-4"><a href="teacher-details.html">Patrick Garner Dony</a></h4>
+            <span class="primary-color d-block mb-4">Economist</span>
+            <p class="card-text">We’re a philosophical bunch here at School site and we have thought long and hard about.</p>
+            <ul class="list-inline ">
+            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+
+            </ul>
+            </div>
+            </div>*@<!-- card -->
+        </div>
+        <a class="btn btn-primary btn-round btn-sm align-item-center" asp-controller="Home" asp-action="ProjectDetail"> Get More </a>
+
+    </div>
+</div>
+<!-- course area end -->
+<!-- events area start -->
+@*<div class="event-area  pt--120 pb--80">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 offset-md-1">
+                <div class="section-title-style2 black-title text-center">
+                    <span>Join with us</span>
+                    <h2>Upcoming Events</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="media align-items-center mb-5">
+                    <div class="media-head primary-bg">
+                        <span><sub>MAR</sub>25</span>
+                        <p>2018</p>
+                    </div>
+                    <div class="media-body">
+                        <h4><a href="#">Affiliate Marketing</a></h4>
+                        <p><i class="fa fa-clock-o"></i>05:23 AM - 09:23 AM</p>
+                    </div>
+                </div> <!-- media -->
+            </div><!-- col-md-6 -->
+            <div class="col-md-6">
+                <div class="media align-items-center mb-5">
+                    <div class="media-head primary-bg">
+                        <span><sub>OCT</sub>25</span>
+                        <p>2018</p>
+                    </div>
+                    <div class="media-body">
+                        <h4><a href="#">Facebook Marketing</a></h4>
+                        <p><i class="fa fa-clock-o"></i>05:23 AM - 09:23 AM</p>
+                    </div>
+                </div> <!-- media -->
+            </div><!-- col-md-6 -->
+            <div class="col-md-6">
+                <div class="media align-items-center mb-5">
+                    <div class="media-head primary-bg">
+                        <span><sub>NOV</sub>25</span>
+                        <p>2018</p>
+                    </div>
+                    <div class="media-body">
+                        <h4><a href="#">Edustar Autumn</a></h4>
+                        <p><i class="fa fa-clock-o"></i>05:23 AM - 09:23 AM</p>
+                    </div>
+                </div> <!-- media -->
+            </div><!-- col-md-6 -->
+            <div class="col-md-6">
+                <div class="media align-items-center mb-5">
+                    <div class="media-head primary-bg">
+                        <span><sub>DEC</sub>25</span>
+                        <p>2018</p>
+                    </div>
+                    <div class="media-body">
+                        <h4><a href="#">Workshop PHP</a></h4>
+                        <p><i class="fa fa-clock-o"></i>05:23 AM - 09:23 AM</p>
+                    </div>
+                </div> <!-- media -->
+            </div><!-- col-md-6 -->
+        </div><!-- row -->
+    </div><!-- container -->
+</div>*@
+<!-- events area end -->
+<!-- about area start -->
+<div class="event-area pt--120 pb--80" id="About">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2 col-md-10 black-title offset-md-1">
+                <div class="section-title-style2 black-title text-center">
+                    <div class="section-title-style mb-4">
+                        <h2>Welcome to <b class="line-break"></b><span class="section-title-style2 primary-color mb-0">Edification</span> University</h2>
+                    </div>
+                    <p class="black-title">Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+                    <a class="btn btn-primary btn-round btn-sm align-item-center" asp-controller="Home" asp-action="About"> Get More </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- about area end -->
+@*<div class="testimonial-area ptb--120">
+    <!-- testimonial area start -->
+    <img class="tst-bg" src="~/template/images/bg/tst-bg-shape.png" alt="image">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3 text-center">
+                <div class="tst-carousel owl-carousel">
+                    <div class="testimonial-content pb--40">
+                        <div class="section-title sec-style-two">
+                            <span class="text-uppercase primary-color mb-0">Happy students</span>
+                            <h2>Testimonial</h2>
+                        </div>
+                        <h3>‘‘ Vous devez profiter de la vie. Toujours aimez, les personnespositives penser. ‘‘</h3>
+                        <h4>Kawsar Ahhamed</h4>
+                        <span>App Developer</span>
+                    </div>
+                    <div class="testimonial-content pb--40">
+                        <div class="section-title sec-style-two">
+                            <span class="text-uppercase primary-color mb-0">Happy students</span>
+                            <h2>Testimonial</h2>
+                        </div>
+                        <h3>‘‘ Vous devez profiter de la vie. Toujours aimez, les personnespositives penser. ‘‘</h3>
+                        <h4>Kawsar Ahhamed</h4>
+                        <span>App Developer</span>
+                    </div>
+                    <div class="testimonial-content pb--40">
+                        <div class="section-title sec-style-two">
+                            <span class="text-uppercase primary-color mb-0">Happy students </span>
+                            <h2>Testimonial</h2>
+                        </div>
+                        <h3>‘‘ Vous devez profiter de la vie. Toujours aimez, les personnespositives penser. ‘‘</h3>
+                        <h4>Kawsar Ahhamed</h4>
+                        <span>App Developer</span>
+                    </div>
+                </div>
+            </div><!-- row -->
+        </div><!-- row -->
+    </div><!-- container -->
+</div><!-- testimonial-area -->*@
+<!-- blog area start -->
+@*<div class="feature-blog  ptb--120">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 offset-md-1">
+                <div class="section-title-style2 black-title title-tb text-center">
+                    <span>Top stories</span>
+                    <h2>Blog & News</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="blog-carousel owl-carousel card-deck">
+                <div class="card mb-5">
+                    <img class="card-img-top" src="~/template/images/blog/blog-thumbnail1.jpg" alt="image">
+                    <div class="card-body p-25">
+                        <ul class="list-inline primary-color mb-3">
+                            <li><i class="fa fa-clock-o"></i> AUGUST 6, 2017</li>
+                            <li><i class="fa fa-comments"></i> 3 Comments</li>
+                        </ul>
+                        <h4 class="card-title mb-4"><a href="blog.html">The Death Of architechture</a></h4>
+                        <p class="card-text">We’re a philosophical bunch here at School site and we have thought long and hard about.</p>
+                        <a class="btn btn-primary btn-round btn-sm" href="blog-details.html"> Read More </a>
+                    </div>
+                </div><!-- card -->
+                <div class="card mb-5">
+                    <img class="card-img-top" src="~/template/images/blog/blog-thumbnail2.jpg" alt="image">
+                    <div class="card-body p-25">
+                        <ul class="list-inline primary-color mb-3">
+                            <li><i class="fa fa-clock-o"></i> AUGUST 6, 2017</li>
+                            <li><i class="fa fa-comments"></i> 3 Comments</li>
+                        </ul>
+                        <h4 class="card-title mb-4"><a href="blog.html">Aenean id ullamcorper</a></h4>
+                        <p class="card-text">We’re a philosophical bunch here at School site and we have thought long and hard about.</p>
+                        <a class="btn btn-primary btn-round btn-sm" href="blog-details.html"> Read More </a>
+                    </div>
+                </div><!-- card -->
+
+                <div class="card mb-5">
+                    <img class="card-img-top" src="~/template/images/blog/blog-thumbnail3.jpg" alt="image">
+                    <div class="card-body p-25">
+                        <ul class="list-inline primary-color mb-3">
+                            <li><i class="fa fa-clock-o"></i> AUGUST 6, 2017</li>
+                            <li><i class="fa fa-comments"></i> 3 Comments</li>
+                        </ul>
+                        <h4 class="card-title mb-4"><a href="blog.html">The Death Of architechture</a></h4>
+                        <p class="card-text">We’re a philosophical bunch here at School site and we have thought long and hard about.</p>
+                        <a class="btn btn-primary btn-round btn-sm" href="blog-details.html"> Read More </a>
+                    </div>
+                </div><!-- card -->
+                <div class="card mb-5">
+                    <img class="card-img-top" src="~/template/images/blog/blog-thumbnail1.jpg" alt="image">
+                    <div class="card-body p-25">
+                        <ul class="list-inline primary-color mb-3">
+                            <li><i class="fa fa-clock-o"></i> AUGUST 6, 2017</li>
+                            <li><i class="fa fa-comments"></i> 3 Comments</li>
+                        </ul>
+                        <h4 class="card-title mb-4"><a href="blog.html">The Death Of architechture</a></h4>
+                        <p class="card-text">We’re a philosophical bunch here at School site and we have thought long and hard about.</p>
+                        <a class="btn btn-primary btn-round btn-sm" href="blog-details.html"> Read More </a>
+                    </div>
+                </div><!-- card -->
+            </div><!-- blog-carousel -->
+        </div><!-- blog-carousel -->
+
+    </div>
+</div> <!-- blog area end -->*@
+<!-- cta area start -->
+@*<div class="cta-area has-color primary-bg cta-area ptb--50">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-9">
+                <div class="section-title-style2 black-title text-center">
+                    <p class="mb-2">Click to Join the Advance Workshop</p>
+                    <h2>Learn in advance</h2>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="cta-btn">
+                    <a class="btn btn-light btn-round" href="#">Join Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+*@<!-- cta area end -->
+<!-- cta area start -->
+@*<div class="cta-area secondary-bg has-color cta-area ptb--50 ">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-9">
+                <div class="cta-content">
+                    <p class="mb-2">Click to Join the Advance Workshop</p>
+                    <h2>Training in advance networking</h2>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="cta-btn">
+                    <a class="btn btn-light btn-round" href="#">Join Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>*@
+<!-- cta area end -->
