@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.Extensions.Hosting;
 using SchoolApp.Data;
 using SchoolApp.Data.Migrations;
@@ -36,7 +37,7 @@ namespace SchoolApp.Controllers
         }
         public IActionResult Index()
         {
-            var mostRecentItem = _context.Announcements
+            var mostRecentItem = _context.Announcements.Include(a => a.AppUser)
                .OrderByDescending(item => item.PostDate)
                .Take(3) // Retrieve the top 3 most recent announcements
                .ToList();
@@ -64,7 +65,7 @@ namespace SchoolApp.Controllers
             {
                 myAnnouncement = myAnnouncement.Where(s => s.AnnouncementTitle!.Contains(searchString) ||
                                                            s.AnnouncementDescription.Contains(searchString) ||
-                                                           s.AnnouncementAuthor.Contains(searchString));
+                                                           s.AppUser.FirstName.Contains(searchString));
             }            
 
             return View(myAnnouncement
@@ -94,8 +95,7 @@ namespace SchoolApp.Controllers
                         AnnouncementTitle = announcementr.AnnouncementTitle,
                         AnnouncementDescription = announcementr.AnnouncementDescription,
                         PostDate = DateTime.Now,
-                        AnnouncementPhoto = result != null ? result.Url?.ToString() : null,                         
-                        AnnouncementAuthor = announcementr.AnnouncementAuthor,
+                        AnnouncementPhoto = result != null ? result.Url?.ToString() : null,
                         AnnTearcherId = userId,
                     };
                 if (announcementr.AnnouncementFile != null)
@@ -168,7 +168,7 @@ namespace SchoolApp.Controllers
                         await annocuncement.AnnouncementFile.CopyToAsync(new FileStream(filepath, FileMode.Create));
                         data.AnnouncementDocFile = annocuncement.AnnouncementDocFile = "Images/" + uniqueName;
                     }
-                    data.AnnouncementAuthor = annocuncement.AnnouncementAuthor;
+                    
 
                 }
                 //data.AnnouncementDocFile =
@@ -410,7 +410,7 @@ namespace SchoolApp.Controllers
             })
             .ToListAsync());
         }
-        public async Task<IActionResult> CreateAssignmentAsync()
+        public async Task<IActionResult> CreateAssignment()
         {
             //var courseNames = _context.Courses.Select(course => course.CourseName).ToList();
             //ViewBag.CourseNames = courseNames;
@@ -438,11 +438,14 @@ namespace SchoolApp.Controllers
         {
             var user = await _userManager.GetUserAsync(User);
             var userId = user.Id;
+
             if (!ModelState.IsValid)
             {
-                await CreateAssignmentAsync();
-                return View(assignment);
+
+                await CreateAssignment();
+                return View(assignment);                
             }
+            
             if (assignment.AssignmentFile != null)
             {
                 string uploadedto = Path.Combine(_environment.WebRootPath, "Images");
@@ -456,11 +459,25 @@ namespace SchoolApp.Controllers
             DateTime currentDateTime = DateTime.Now;
             if (assignment.Deadline < currentDateTime)
             {
-                ModelState.AddModelError("SelectedDateTime", "Please select a date-time in the future.");
-                await CreateAssignmentAsync();
+                ModelState.AddModelError("Deadline", "Please select a date-time in the future.");
+                await CreateAssignment();
+                return View(assignment);
+            }
+            if (assignment.CourseId <= 0)
+            {
+                // Add a server-side validation error
+                ModelState.AddModelError("CourseId", "Course Name is required.");
+
+                // Repopulate the SelectList and return to the form
+                await CreateAssignment();
                 return View(assignment);
             }
             assignment.ATearcherId = userId;
+            if (assignment.CourseId <= 0)
+            {
+                // Add a server-side validation error
+                ModelState.AddModelError("CourseId", "Course Name is required.");
+            }
             _context.Add(assignment);
             await _context.SaveChangesAsync();
             return RedirectToAction("AssignmentIndex");

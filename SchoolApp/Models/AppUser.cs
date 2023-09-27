@@ -6,18 +6,14 @@ namespace SchoolApp.Models
     public class AppUser : IdentityUser
     {
 
-        //[Required]
-        [Display(Name = "User Name")]
+        [Required(ErrorMessage = "First name is required.")]
+        [Display(Name = "First Name")]
         [StringLength(30)]
-        public string? AppUsername { get; set; }
-        [EmailAddress(ErrorMessage = "Invalid email format")]
-        public string? AppUserEmail { get; set; }
-        [DataType(DataType.Password)]
-        public string? AppUserPassword { get; set; }
-
-        [Compare("Password", ErrorMessage = "Passwords do not match.")]
-        [DataType(DataType.Password)]
-        public string? AppUserConfirmPassword { get; set; }
+        public string? FirstName { get; set; }
+        [Required(ErrorMessage = "Last name is required.")]
+        [Display(Name = "Last Name")]
+        [StringLength(30)]
+        public string? LastName { get; set; }
         
     }
 }

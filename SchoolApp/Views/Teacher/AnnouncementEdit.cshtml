@@ -52,8 +52,8 @@
                   class="formbold-form-file"
                   accept="image/*"
                 />
-                <span asp-validation-for="AnnouncementPhoto" class="text-danger"></span> 
-              </div>
+@*                <span asp-validation-for="AnnouncementPhoto" class="text-danger"></span> 
+*@              </div>
               <div class="formbold-form-file-flex">
                 <label asp-for="AnnouncementFile" class="formbold-form-label">
                   Announcement file
@@ -65,20 +65,9 @@
                   class="formbold-form-file"
                   accept="image/*, application/pdf, application/msword, video/*, .txt"
                 />
-                <span asp-validation-for="AnnouncementFile" class="text-danger"></span> 
-              </div>
-              <div class="formbold-mb-3">
-                <label asp-for="AnnouncementAuthor" class="formbold-form-label"> Announcement Author </label>
-
-                <input
-                  type="text"
-                  asp-for="AnnouncementAuthor"
-                  id="address"
-                  placeholder="Street address"
-                  class="formbold-form-input formbold-mb-3"
-                />
-                 <span asp-validation-for="AnnouncementAuthor" class="text-danger"></span>              
-              </div>
+@*                <span asp-validation-for="AnnouncementFile" class="text-danger"></span> 
+*@              </div>
+              
               <input type="submit" value="Edit" class="formbold-btn">
             </form>
           </div>

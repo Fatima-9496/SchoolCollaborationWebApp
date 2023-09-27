@@ -59,53 +59,52 @@
 <!-- course area start -->
 <div class="ptb--120" id="Announcement">
     <div class="container" id="content-container">
-        
+        @if (ViewBag.mostRecentItem != null)
+        {
             <div class="col-md-10 offset-md-1">
                 <div class="section-title-style2 black-title title-tb text-center">
                     <span>Whats new</span>
                     <h2 class="primary-color">Recent Announcements</h2>
                 </div>
-            </div>
-        
+            </div>       
+            <div class="row">
+                @foreach (var item in ViewBag.mostRecentItem)
+                {
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card mb-5">
+                            <div class="course-thumb">
+                                <img src="@item.AnnouncementPhoto" alt="image">
+                                @*<span class="cs-price primary-bg">$150</span>*@
+                            </div>
+                            <div class="card-body  p-25">
+                                <div class="course-meta-title mb-4">
+                                    <div class="course-meta-text">
+                                        <h4><a href="course-details.html">@item.AnnouncementTitle</a></h4>
+                                    </div>
+                                </div>
+                                <p>@item.AnnouncementDescription</p>
+                                <ul class="course-meta-details list-inline  w-100">
+                                    <li>
+                                        <p>Date</p>
+                                        <span>@item.PostDate.ToString("yyyy-MM-dd")</span>
+                                    </li>
+                                    <li>
+                                        <p>Author</p>
+                                        <span>@item.AppUser.FirstName</span>
+                                    </li>
+                                    <li>
+                                        <p>Document</p>
+                                        <span><a href="@item.AnnouncementDocFile"><i class="fa fa-file" aria-hidden="true"></i></a></span>
+                                    </li>
+                                </ul>
+                                <br />
+                                <a class="btn btn-primary btn-round btn-sm" asp-controller="Home" asp-action="AnnouncementDetail"> Get More </a>
 
-        <div class="row">
-            @foreach (var item in ViewBag.mostRecentItem)
-            {
-                <div class="col-lg-4 col-md-6">
-            <div class="card mb-5">
-                <div class="course-thumb">
-                    <img src="@item.AnnouncementPhoto" alt="image">
-                    @*<span class="cs-price primary-bg">$150</span>*@
-                </div>
-                <div class="card-body  p-25">
-                    <div class="course-meta-title mb-4">
-                        <div class="course-meta-text">
-                                <h4><a href="course-details.html">@item.AnnouncementTitle</a></h4>
-                        </div>
+                            </div><!-- card-body -->
+                        </div><!-- card -->
                     </div>
-                        <p>@item.AnnouncementDescription</p>
-                    <ul class="course-meta-details list-inline  w-100">
-                        <li>
-                            <p>Date</p>
-                                <span>@item.PostDate.ToString("yyyy-MM-dd")</span>
-                        </li>
-                        <li>
-                            <p>Author</p>
-                                <span>@item.AnnouncementAuthor</span>
-                        </li>
-                        <li>
-                            <p>Document</p>
-                                <span><a href="@item.AnnouncementDocFile"><i class="fa fa-file" aria-hidden="true"></i></a></span>
-                        </li>
-                    </ul>
-                    <br />
-                    <a class="btn btn-primary btn-round btn-sm" asp-controller="Home" asp-action="AnnouncementDetail"> Get More </a>
-
-                </div><!-- card-body -->
-            </div><!-- card -->
-            </div>
-            }
-            @*<div class="card mb-5">
+                }
+                @*<div class="card mb-5">
                 <div class="course-thumb">
                     <img src="@ViewBag.MostRecentItem[1].AnnouncementPhoto" alt="image">
                     
@@ -168,7 +167,17 @@
                     <a class="btn btn-primary btn-round btn-sm" asp-controller="Home" asp-action="AnnouncementDetail"> Get More </a>
                 </div><!-- card-body -->
             </div><!-- card -->*@
-        </div>
+            </div>
+        }
+        else
+        {
+            <div class="col-md-10 offset-md-1">
+                <div class="section-title-style2 black-title title-tb text-center">
+                    <span></span>
+                    <h2 class="primary-color">No Recent Announcement</h2>
+                </div>
+            </div>
+        }
     </div>
 </div>
 <!-- course area end -->

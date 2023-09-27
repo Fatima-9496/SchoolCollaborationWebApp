@@ -37,8 +37,7 @@ namespace SchoolApp.Data
                 .HasMany(a => a.Enrollments)
                 .WithOne(s => s.Course)
                 .OnDelete(DeleteBehavior.Cascade);
-        }
-        
+        }       
 
     }
 }

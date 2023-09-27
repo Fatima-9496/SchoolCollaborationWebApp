@@ -56,10 +56,8 @@
                 SelectList courseList = TempData["CourseList"] as SelectList;
                 }
               <div class="formbold-mb-3">
-                <label  class="formbold-form-label"> Course Name </label>
-
-                <select class="formbold-form-input" asp-for="CourseId" asp-items="@(ViewBag.Message)" class="form-control"></select>
-                
+                <label asp-for="CourseId" class="formbold-form-label"> Course Name </label>
+                <select asp-for="CourseId" class="formbold-form-input" asp-items="@(ViewBag.Message)" class="form-control"></select>                
                  <span asp-validation-for="CourseId" class="text-danger"></span>              
               </div>
               <button class="formbold-btn">Create</button>

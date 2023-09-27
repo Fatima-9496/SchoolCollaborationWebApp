@@ -7,27 +7,28 @@ namespace SchoolApp.Models
     {
         [Key]
         public int ProjectId { get; set; }
-        
-        //[StringLength(20, MinimumLength = 3)]
+        [Display(Name = "Project Title")]
+        [StringLength(20, MinimumLength = 3, ErrorMessage = "Title must be between 3 and 20 characters.")]
+        [Required]
         public string ProjectTitle { get; set; }
-        
-        //[StringLength(60)]
-        public string ProjectDescription { get; set; }
+        [Display(Name = "Project Description")]
+        public string? ProjectDescription { get; set; }
+        [Display(Name = "Date Completed")]
+        [Required]
         public DateTime DateCompleted { get; set; }
+        [Required]
+        [Display(Name = "Project Area")]
         public string ProjectArea { get; set; }
         public string? ImageUrl { get; set; }
         [NotMapped]
-        [Display(Name = "Photo")]
+        [Display(Name = "Project Photo")]
         public IFormFile? ImageFile { get; set; }
         public string? MediaUrl { get; set; }
         [NotMapped]
-        [Display(Name = "Photo")]
+        [Display(Name = "Project Document")]
         public IFormFile? PhotoFile { get; set; }
         [ForeignKey("AppUser")]
-        public String? StudentId { get; set; }
-
+        public string? StudentId { get; set; }
         public AppUser? AppUser { get; set; }
-        //public IFormFile? proMedia { get; set; }
-       // public string FileType { get; set; }
     }
 }

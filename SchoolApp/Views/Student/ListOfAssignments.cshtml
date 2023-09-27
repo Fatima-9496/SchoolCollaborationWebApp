@@ -18,10 +18,19 @@
 <!-- body overlay area end -->
 <div class="course-area  pt--120 pb--70">
     <div class="container">
+        @if (Model == null || !Model.Any())
+        {
+            <div class="col-md-10 offset-md-1">
+                <div class="section-title-style2 black-title title-tb">
+                    <h2 class="primary-color">No Assignment Available</h2>
+                </div>
+            </div>
+        }
+        else
+        {
         <div class="col-md-10 offset-md-1">
             <div class="section-title-style2 black-title title-tb text-center">
-                @*                <span>Whats new</span>
-                *@                <h2 class="primary-color">List of Assignments</h2>
+                <h2 class="primary-color">List of Assignments</h2>
             </div>
         </div>
         <div class="row">
@@ -59,6 +68,7 @@
                 </div>
             }
         </div>
+        }
     </div>
 </div>
 

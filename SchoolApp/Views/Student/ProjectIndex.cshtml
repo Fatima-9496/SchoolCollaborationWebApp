@@ -17,6 +17,16 @@
 <!-- body overlay area end -->
 <div class="course-area  pt--120 pb--70">
     <div class="container">
+        @if (Model == null || !Model.Any())
+        {
+            <div class="col-md-10 offset-md-1">
+                <div class="section-title-style2 black-title title-tb">
+                    <a class="btn btn-primary btn-round btn-sm" asp-action="CreateProject">Create New Project</a>
+                    <h2 class="primary-color">No Project Available</h2>
+                </div>
+            </div>
+        }
+        else{
         <div class="col-md-10 offset-md-1">
             <div class="section-title-style2 black-title title-tb">
                 <a class="btn btn-primary btn-round btn-sm" asp-action="CreateProject">Create New Project</a>
@@ -54,6 +64,7 @@
                 </div>
             }
         </div>
+        }
     </div>
 </div>
 

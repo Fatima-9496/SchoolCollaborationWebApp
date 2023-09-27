@@ -55,7 +55,7 @@ namespace SchoolApp.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(ListOfNotes));
             }
-            return View();
+            return View(note);
         }
         public async Task<IActionResult> NoteEdit(int? id)
         {
@@ -117,7 +117,7 @@ namespace SchoolApp.Controllers
         }
         public IActionResult Index()
         {
-            var mostRecentItem = _context.Announcements
+            var mostRecentItem = _context.Announcements.Include(a => a.AppUser)
                .OrderByDescending(item => item.PostDate)
                .Take(3) // Retrieve the top 3 most recent announcements
                .ToList();
@@ -158,33 +158,38 @@ namespace SchoolApp.Controllers
         {
             var user = await _userManager.GetUserAsync(User);
             var userId = user.Id;
-            if (project.ImageFile != null)
+            if (ModelState.IsValid)
             {
-                string uploadedto = Path.Combine(_hostEnvironment.WebRootPath, "Images");
-                string uniqueName = Guid.NewGuid() + "-" + project.ImageFile.FileName;
-                string filepath = Path.Combine(uploadedto, uniqueName);
-                await project.ImageFile.CopyToAsync(new FileStream(filepath, FileMode.Create));
-                project.ImageUrl = "Images/" + uniqueName;
-            }
+                if (project.ImageFile != null)
+                {
+                    string uploadedto = Path.Combine(_hostEnvironment.WebRootPath, "Images");
+                    string uniqueName = Guid.NewGuid() + "-" + project.ImageFile.FileName;
+                    string filepath = Path.Combine(uploadedto, uniqueName);
+                    await project.ImageFile.CopyToAsync(new FileStream(filepath, FileMode.Create));
+                    project.ImageUrl = "Images/" + uniqueName;
+                }
 
-            if (project.PhotoFile != null)
-            {
-                string uploadedto = Path.Combine(_hostEnvironment.WebRootPath, "Images");
-                string uniqueName = Guid.NewGuid() + "-" + project.PhotoFile.FileName;
-                string filepath = Path.Combine(uploadedto, uniqueName);
-                await project.PhotoFile.CopyToAsync(new FileStream(filepath, FileMode.Create));
-                project.MediaUrl = "Images/" + uniqueName;
+                if (project.PhotoFile != null)
+                {
+                    string uploadedto = Path.Combine(_hostEnvironment.WebRootPath, "Images");
+                    string uniqueName = Guid.NewGuid() + "-" + project.PhotoFile.FileName;
+                    string filepath = Path.Combine(uploadedto, uniqueName);
+                    await project.PhotoFile.CopyToAsync(new FileStream(filepath, FileMode.Create));
+                    project.MediaUrl = "Images/" + uniqueName;
+                }
+                DateTime currentDateTime = DateTime.Now;
+                if (project.DateCompleted < currentDateTime)
+                {
+                    ModelState.AddModelError("SelectedDateTime", "Please select a date-time in the future.");
+                    return View(project);
+                }
+                project.StudentId = userId;
+                _context.Add(project);
+                await _context.SaveChangesAsync();
+
+                return RedirectToAction("ProjectIndex");
             }
-            DateTime currentDateTime = DateTime.Now;
-            if (project.DateCompleted < currentDateTime)
-            {
-                ModelState.AddModelError("SelectedDateTime", "Please select a date-time in the future.");               
-                return View(project);
-            }
-            project.StudentId = userId;
-            _context.Add(project);
-            await _context.SaveChangesAsync();
-            return RedirectToAction("ProjectIndex");
+            return View(project);
         }
         public async Task<IActionResult> ProjectEdit(int? id)
         {
@@ -477,8 +482,7 @@ namespace SchoolApp.Controllers
                 AssignmentId = id,
                 StudentId = userId,
                 SubmissionText = submissionText,
-                //SubmissionFileUrl = submissionFile,
-                IsSubmitted = true,
+                //SubmissionFileUrl = submissionFile,                
                 SubmissionDate = DateTime.Now
             };
             if (AnnouncementFile != null)
@@ -513,7 +517,7 @@ namespace SchoolApp.Controllers
                 ViewBag.SubmissionMessage = "Submission closed. Deadline has been reached.";
                 return View("SubmissionClosed");
             }
-            ViewBag.ISubmitted = true;
+            
             return View(assignmentSubmission);
         }
         private bool ProjectExit(int id)

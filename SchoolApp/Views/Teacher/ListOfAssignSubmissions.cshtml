@@ -31,7 +31,7 @@
                 @foreach (var sub in Model)
                 {
                     <tr>
-                        <td>@(sub.SubmissionDate != null ? sub.SubmissionDate : "N/A")</td>
+                        <td>@sub.SubmissionDate</td>
                         <td>@(sub.SubmissionText != null ? sub.SubmissionText : "N/A")</td>
                         <td>
                             <a href="~/@sub.AnnouncementDocFile">View File</a>

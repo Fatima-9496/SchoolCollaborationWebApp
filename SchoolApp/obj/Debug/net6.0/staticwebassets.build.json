@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "mvWG76e3VJMoO92eoxFcUg+wosbwTnf4db6u9N5wPBk=",
+  "Hash": "vCe64L3TQGImdEtUXnx0elLDCmkfBK2C8in72DBPrEo=",
   "Source": "SchoolApp",
   "BasePath": "_content/SchoolApp",
   "Mode": "Default",
@@ -1156,6 +1156,23 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
+      "Identity": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Images\\013f9af9-df98-4172-b850-430e185eda30-SPM.pdf",
+      "SourceId": "SchoolApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\",
+      "BasePath": "_content/SchoolApp",
+      "RelativePath": "Images/013f9af9-df98-4172-b850-430e185eda30-SPM.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\013f9af9-df98-4172-b850-430e185eda30-SPM.pdf"
+    },
+    {
       "Identity": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Images\\06a09b39-f215-44d3-85e7-edc52a60d694-fatima028612ml.pdf",
       "SourceId": "SchoolApp",
       "SourceType": "Discovered",
@@ -1256,6 +1273,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\0f543f22-37e0-46ab-b87d-d9a1d3c46f5a-SPM.pdf"
+    },
+    {
+      "Identity": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Images\\125d69c3-c782-4788-a68b-4da027861bde-FinalReport (1).doc",
+      "SourceId": "SchoolApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\",
+      "BasePath": "_content/SchoolApp",
+      "RelativePath": "Images/125d69c3-c782-4788-a68b-4da027861bde-FinalReport (1).doc",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\125d69c3-c782-4788-a68b-4da027861bde-FinalReport (1).doc"
     },
     {
       "Identity": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Images\\1e52bfdf-d188-4746-a233-2821e0b2f1ce-researchfinalll.pdf",
@@ -1530,6 +1564,23 @@
       "OriginalItemSpec": "wwwroot\\Images\\7a3508d7-6d26-415d-bf4d-0a78fa7385a3-Screenshot (101).png"
     },
     {
+      "Identity": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Images\\7a9a52a0-b8d4-4255-8140-8d5e46482a8a-SPM.pdf",
+      "SourceId": "SchoolApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\",
+      "BasePath": "_content/SchoolApp",
+      "RelativePath": "Images/7a9a52a0-b8d4-4255-8140-8d5e46482a8a-SPM.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\7a9a52a0-b8d4-4255-8140-8d5e46482a8a-SPM.pdf"
+    },
+    {
       "Identity": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Images\\7cca817f-ef27-4579-b37f-7ba316093b83-Rm_assign_II.pdf",
       "SourceId": "SchoolApp",
       "SourceType": "Discovered",
@@ -1766,6 +1817,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\b02c7b27-8328-4f98-a73f-b081e08f1527-Screenshot (101).png"
+    },
+    {
+      "Identity": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Images\\b1b2d8b7-2ca9-4eda-9131-1cbf564c5d0f-research_final - Copy.pdf",
+      "SourceId": "SchoolApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\",
+      "BasePath": "_content/SchoolApp",
+      "RelativePath": "Images/b1b2d8b7-2ca9-4eda-9131-1cbf564c5d0f-research_final - Copy.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\b1b2d8b7-2ca9-4eda-9131-1cbf564c5d0f-research_final - Copy.pdf"
     },
     {
       "Identity": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Images\\b3001361-9c33-463e-9508-72ae1f76e4df-research_final - Copy.pdf",
@@ -2038,6 +2106,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\d6ac4577-dfdc-4fe5-a342-50e33012c755-Screenshot (102).png"
+    },
+    {
+      "Identity": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Images\\d7a8fcea-a536-40d4-8047-56bb3288ef42-Screenshot (102).png",
+      "SourceId": "SchoolApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\",
+      "BasePath": "_content/SchoolApp",
+      "RelativePath": "Images/d7a8fcea-a536-40d4-8047-56bb3288ef42-Screenshot (102).png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\d7a8fcea-a536-40d4-8047-56bb3288ef42-Screenshot (102).png"
     },
     {
       "Identity": "C:\\Users\\fabay\\source\\repos\\SchoolApp\\SchoolApp\\wwwroot\\Images\\d7afc752-c979-49aa-8f8d-b4d40dccf8f7-Elegant and Professional Company Business Proposal Presentation (1).pdf",

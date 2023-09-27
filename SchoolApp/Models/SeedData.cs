@@ -21,14 +21,14 @@ namespace SchoolApp.Models
                 context.Courses.AddRange(
                     new Course
                     {
-                        CourseName = "When Harry Met Sally",
+                        //CourseName = "When Harry Met Sally",
                         CourseDescription = "When Harry Met Sally"
 
                     },
 
                     new Course
                     {
-                        CourseName = "When Harry Met Sally",
+                        //CourseName = "When Harry Met Sally",
                         CourseDescription = "When Harry Met Sally"
 
                     }

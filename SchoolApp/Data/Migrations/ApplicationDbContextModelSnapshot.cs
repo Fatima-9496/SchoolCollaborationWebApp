@@ -264,11 +264,6 @@ namespace SchoolApp.Data.Migrations
                     b.Property<string>("AnnTearcherId")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("AnnouncementAuthor")
-                        .IsRequired()
-                        .HasMaxLength(40)
-                        .HasColumnType("nvarchar(40)");
-
                     b.Property<string>("AnnouncementDescription")
                         .HasColumnType("nvarchar(max)");
 
@@ -280,8 +275,8 @@ namespace SchoolApp.Data.Migrations
 
                     b.Property<string>("AnnouncementTitle")
                         .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
 
                     b.Property<DateTime?>("PostDate")
                         .HasColumnType("datetime2");
@@ -313,19 +308,16 @@ namespace SchoolApp.Data.Migrations
                     b.Property<string>("AssignmentDocFile")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("AssignmentMaterial")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("AssignmentTitle")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
 
                     b.Property<int?>("CourseId")
                         .HasColumnType("int");
 
-                    b.Property<string>("CourseIds")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<DateTime?>("Deadline")
+                        .IsRequired()
                         .HasColumnType("datetime2");
 
                     b.HasKey("AssignmentId");
@@ -351,13 +343,10 @@ namespace SchoolApp.Data.Migrations
                     b.Property<int?>("AssignmentId")
                         .HasColumnType("int");
 
-                    b.Property<bool?>("IsSubmitted")
-                        .HasColumnType("bit");
-
                     b.Property<string>("StudentId")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<DateTime?>("SubmissionDate")
+                    b.Property<DateTime>("SubmissionDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("SubmissionText")
@@ -384,23 +373,19 @@ namespace SchoolApp.Data.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("CourseDescription")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<string>("CourseDocFile")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("CourseMaterial")
+                    b.Property<string>("CourseDocFile")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("CourseName")
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
 
-                    b.Property<DateTime?>("EndDate")
+                    b.Property<DateTime>("EndDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime?>("StartDate")
+                    b.Property<DateTime>("StartDate")
                         .HasColumnType("datetime2");
 
                     b.HasKey("CourseId");
@@ -444,47 +429,22 @@ namespace SchoolApp.Data.Migrations
                     b.Property<string>("Content")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime?>("CreatedDate")
+                    b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("StudentId")
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Title")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
 
                     b.HasKey("Id");
 
                     b.HasIndex("StudentId");
 
                     b.ToTable("MNotes");
-                });
-
-            modelBuilder.Entity("SchoolApp.Models.Note", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("Content")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("StudentId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("Title")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("StudentId");
-
-                    b.ToTable("Notes");
                 });
 
             modelBuilder.Entity("SchoolApp.Models.Project", b =>
@@ -509,12 +469,12 @@ namespace SchoolApp.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ProjectDescription")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ProjectTitle")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
 
                     b.Property<string>("StudentId")
                         .HasColumnType("nvarchar(450)");
@@ -530,16 +490,13 @@ namespace SchoolApp.Data.Migrations
                 {
                     b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
 
-                    b.Property<string>("AppUserConfirmPassword")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)");
 
-                    b.Property<string>("AppUserEmail")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("AppUserPassword")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("AppUsername")
+                    b.Property<string>("LastName")
+                        .IsRequired()
                         .HasMaxLength(30)
                         .HasColumnType("nvarchar(30)");
 
@@ -679,15 +636,6 @@ namespace SchoolApp.Data.Migrations
                 });
 
             modelBuilder.Entity("SchoolApp.Models.MNote", b =>
-                {
-                    b.HasOne("SchoolApp.Models.AppUser", "AppUser")
-                        .WithMany()
-                        .HasForeignKey("StudentId");
-
-                    b.Navigation("AppUser");
-                });
-
-            modelBuilder.Entity("SchoolApp.Models.Note", b =>
                 {
                     b.HasOne("SchoolApp.Models.AppUser", "AppUser")
                         .WithMany()
